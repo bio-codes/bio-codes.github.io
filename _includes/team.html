@@ -1,0 +1,23 @@
+<section class="section" id="team">
+    <div class="container">
+        <p class="section-eyebrow">{{ site.data.team.section_eyebrow }}</p>
+        <h2 class="section-title">{{ site.data.team.section_title }}</h2>
+        <p class="section-sub">{{ site.data.team.section_sub }}</p>
+        <div class="team-grid">
+            {% for group in site.data.team.groups %}
+            <div class="team-group">
+                <h3 class="team-group-name"><a href="{{ group.url }}" target="_blank" rel="noopener">{{ group.name }}</a></h3>
+                <ul class="team-members">
+                    {% for member in group.members %}
+                    <li class="team-member">
+                        <span class="team-member-name">{{ member.name }}</span>
+                        {% if member.role %}<span class="team-member-role">{{ member.role }}</span>{% endif %}
+                        {% if member.email %}<a href="mailto:{{ member.email }}" class="team-member-email">{{ member.email }}</a>{% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

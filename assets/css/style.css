@@ -1,5 +1,22 @@
 /* ── BIO-CODES — Style (OSCARS Purple Theme) ──────────────────── */
 
+/* ── Self-hosted Fonts ────────────────────────────────────────── */
+@font-face {
+  font-family: 'Readex Pro';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/ReadexPro-VariableFont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/DMMono-Regular.woff2') format('woff2');
+}
+
 /* ── Variables ─────────────────────────────────────────────────── */
 :root {
   --color-bg: #ffffff;
@@ -886,6 +903,112 @@ ul {
   color: #c98adb;
 }
 
+/* ── Team ──────────────────────────────────────────────────────── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.team-group {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.team-group-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-dark-panel);
+}
+
+.team-group-name a {
+  color: var(--color-dark-panel);
+}
+
+.team-group-name a:hover {
+  color: var(--color-accent);
+}
+
+.team-members {
+  list-style: none;
+}
+
+.team-member {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.team-member:last-child {
+  border-bottom: none;
+}
+
+.team-member-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.team-member-role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.team-member-email {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-accent);
+}
+
+/* ── Legal page ───────────────────────────────────────────────── */
+.legal-content {
+  max-width: 720px;
+}
+
+.legal-content h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 28px 0 8px;
+  color: var(--color-dark-panel);
+}
+
+.legal-content p {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.legal-content a {
+  color: var(--color-accent);
+}
+
+.footer-legal {
+  margin-top: 8px;
+}
+
+.footer-legal a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #9382a5;
+  letter-spacing: 0.02em;
+}
+
+.footer-legal a:hover {
+  color: #c98adb;
+}
+
 /* ── Responsive ────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .nav-toggle {
@@ -950,6 +1073,10 @@ ul {
   }
 
   .integrations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
     grid-template-columns: 1fr;
   }
 

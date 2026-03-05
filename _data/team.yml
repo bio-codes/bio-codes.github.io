@@ -1,0 +1,30 @@
+# _data/team.yml
+# ─────────────────────────────────────────────────────────────────
+# Team members and contact information.
+# ─────────────────────────────────────────────────────────────────
+
+section_eyebrow: Team
+section_title: Project Team
+section_sub: >
+  BIO-CODES is a collaboration between the ISCC Foundation and
+  Leiden University, funded by the European Union.
+
+groups:
+  - name: ISCC Foundation
+    url: https://iscc.io
+    members:
+      - name: Titusz Pan
+        role: PI
+        email: tp@iscc.io
+      - name: Kira Lemke
+      - name: Dr. Martin Etzrodt
+
+  - name: Leiden University
+    url: https://www.universiteitleiden.nl/
+    members:
+      - name: Sylvia Le Dévédec
+        role: PI
+        email: s.e.ledevedec@lacdr.leidenuniv.nl
+      - name: Maarten Paul
+      - name: Sebastian Posth
+      - name: Joost Willemse
