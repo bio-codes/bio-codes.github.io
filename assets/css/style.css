@@ -829,12 +829,13 @@ ul {
 
 .footer-logos {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-logos img {
-  height: 36px;
+  height: 56px;
   width: auto;
   opacity: 0.85;
   transition: opacity 0.2s;
