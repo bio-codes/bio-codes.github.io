@@ -9,7 +9,7 @@ section_title: "Enhancing AI-Readiness of Bioimaging Data<br/>with Content-Based
 
 cards:
   - id: challenge
-    icon: "⚠"
+    icon: ""
     heading: Challenge
     items:
       - strong: "Growing volume of data:"
@@ -26,7 +26,7 @@ cards:
           processing steps that produced them.
 
   - id: solution
-    icon: "💡"
+    icon: ""
     heading: Solution
     items:
       - strong: "International Standard Content Code (ISCC ISO 24138)."
@@ -45,7 +45,7 @@ cards:
           data in repositories with images in papers.
 
   - id: impact
-    icon: "🔬"
+    icon: ""
     heading: Scientific Impact
     items:
       - strong: "Cryptographic figure data verification"

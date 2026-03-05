@@ -314,15 +314,15 @@ ul {
 }
 
 .challenge-challenge {
-  border-top: 3px solid #c0392b;
+  border-top: 3px solid #9e9e9e;
 }
 
 .challenge-solution {
-  border-top: 3px solid var(--color-teal);
+  border-top: 3px solid #9e9e9e;
 }
 
 .challenge-impact {
-  border-top: 3px solid var(--color-accent);
+  border-top: 3px solid #9e9e9e;
 }
 
 .challenge-icon {

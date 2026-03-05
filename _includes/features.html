@@ -6,7 +6,7 @@
         <div class="features-grid">
             {% for feature in site.data.features.features %}
             <div class="feature-card">
-                <div class="feature-icon">{{ feature.icon }}</div>
+                {% if feature.icon != "" %}<div class="feature-icon">{{ feature.icon }}</div>{% endif %}
                 <h3 class="feature-title">{{ feature.title }}</h3>
                 <p class="feature-desc">{{ feature.description }}</p>
             </div>

@@ -7,16 +7,18 @@
             {% for tool in site.data.tools.tools %}
             <div class="tool-card" id="{{ tool.id }}">
                 <div class="tool-header">
-                    <span class="tool-icon">{{ tool.icon }}</span>
+                    {% if tool.icon != "" %}<span class="tool-icon">{{ tool.icon }}</span>{% endif %}
                     <div>
                         <h3 class="tool-name">{{ tool.name }}</h3>
                         <span class="tool-status tool-status-{{ tool.status_color }}">{{ tool.status }}</span>
                     </div>
                 </div>
                 <p class="tool-desc">{{ tool.description }}</p>
+                {% if tool.install != "" %}
                 <div class="tool-install">
                     <code>{{ tool.install }}</code>
                 </div>
+                {% endif %}
                 {% if tool.platforms.size > 0 %}
                 <div class="tool-meta">
                     <span class="tool-meta-label">Platforms:</span>

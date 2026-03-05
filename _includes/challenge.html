@@ -4,7 +4,7 @@
         <div class="challenge-grid">
             {% for card in site.data.challenge.cards %}
             <div class="challenge-card challenge-{{ card.id }}">
-                <div class="challenge-icon">{{ card.icon }}</div>
+                {% if card.icon != "" %}<div class="challenge-icon">{{ card.icon }}</div>{% endif %}
                 <h3 class="challenge-heading">{{ card.heading }}</h3>
                 <ul class="challenge-list">
                     {% for item in card.items %}

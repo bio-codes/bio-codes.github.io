@@ -14,7 +14,7 @@ section_sub: >
 tools:
   - id: iscc-sum
     name: iscc-sum
-    icon: "∑"
+    icon: ""
     status: "Stable v0.1"
     status_color: green
     description: >
@@ -47,14 +47,14 @@ tools:
 
   - id: iscc-bio
     name: iscc-bio
-    icon: "🔬"
+    icon: ""
     status: "Beta"
     status_color: amber
     description: >
       ISCC processing for multi-dimensional bioimage data. Implements the
       IMAGEWALK specification — deterministic Z→C→T plane traversal for
       format-agnostic, reproducible content hashing of microscopy volumes.
-    install: pip install iscc-bio
+    install: ""
     platforms:
       - Linux
       - macOS
@@ -79,14 +79,14 @@ tools:
 
   - id: omero-iscc
     name: omero-iscc
-    icon: "🔗"
+    icon: ""
     status: "Alpha"
     status_color: amber
     description: >
       OMERO server integration plugin. Automatically generates and stores
       ISCC identifiers for images imported into OMERO, enabling
       facility-level deduplication and FAIR-compliant provenance tracking.
-    install: pip install omero-iscc
+    install: ""
     platforms:
       - Linux
       - macOS
