@@ -748,9 +748,9 @@ ul {
 /* ── Footer ────────────────────────────────────────────────────── */
 .footer {
   padding: 56px 0 0;
-  border-top: 1px solid var(--color-border);
-  background: var(--color-bg-alt);
-  color: var(--color-text-light);
+  border-top: none;
+  background: #1c0e28;
+  color: #b8a5c8;
 }
 
 .footer-main {
@@ -768,19 +768,19 @@ ul {
 .footer-logo {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--color-accent);
+  color: #ffffff;
   display: block;
   margin-bottom: 6px;
   letter-spacing: 0.04em;
 }
 
 .footer-logo:hover {
-  color: var(--color-accent-hover);
+  color: #c98adb;
 }
 
 .footer-tagline {
   font-size: 0.82rem;
-  color: var(--color-text-light);
+  color: #b8a5c8;
   margin-bottom: 16px;
 }
 
@@ -791,14 +791,14 @@ ul {
 }
 
 .footer-link {
-  color: var(--color-text-light);
+  color: #b8a5c8;
   font-size: 0.88rem;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 .footer-link:hover {
-  color: var(--color-accent);
+  color: #c98adb;
 }
 
 .footer-right {
@@ -811,20 +811,20 @@ ul {
 .footer-community h4 {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--color-dark-panel);
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .footer-community a {
   display: block;
   font-size: 0.82rem;
-  color: var(--color-text-light);
+  color: #b8a5c8;
   margin-bottom: 6px;
   transition: color 0.2s;
 }
 
 .footer-community a:hover {
-  color: var(--color-accent);
+  color: #c98adb;
 }
 
 .footer-logos {
@@ -836,8 +836,9 @@ ul {
 .footer-logos img {
   height: 36px;
   width: auto;
-  opacity: 0.7;
+  opacity: 0.85;
   transition: opacity 0.2s;
+  filter: brightness(1.6);
 }
 
 .footer-logos img:hover {
@@ -845,7 +846,7 @@ ul {
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
@@ -858,17 +859,17 @@ ul {
 .footer-goal p {
   font-size: 0.72rem;
   font-family: var(--font-mono);
-  color: var(--color-text-light);
+  color: #9382a5;
   letter-spacing: 0.02em;
 }
 
 .footer-funding a {
-  color: var(--color-text-light);
+  color: #b8a5c8;
   text-decoration: underline;
 }
 
 .footer-funding a:hover {
-  color: var(--color-accent);
+  color: #c98adb;
 }
 
 /* ── Responsive ────────────────────────────────────────────────── */
