@@ -92,6 +92,15 @@ ul {
   font-weight: 700;
   color: var(--color-accent);
   letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo svg {
+  width: 32px;
+  height: 29px;
+  flex-shrink: 0;
 }
 
 .nav-logo:hover {
@@ -769,9 +778,17 @@ ul {
   font-size: 1.3rem;
   font-weight: 700;
   color: #ffffff;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 6px;
   letter-spacing: 0.04em;
+}
+
+.footer-logo svg {
+  width: 32px;
+  height: 29px;
+  flex-shrink: 0;
 }
 
 .footer-logo:hover {
