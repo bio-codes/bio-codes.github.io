@@ -6,8 +6,8 @@
 section_eyebrow: Team
 section_title: Project Team
 section_sub: >
-  BIO-CODES is a collaboration between the ISCC Foundation and
-  Leiden University, funded by the European Union.
+  BIO-CODES is a collaboration between the ISCC Foundation,
+  Leiden University, and German BioImaging, funded by the European Union.
 
 groups:
   - name: ISCC Foundation
@@ -17,7 +17,7 @@ groups:
         role: PI
         email: tp@iscc.io
       - name: Kira Lemke
-      - name: Dr. Martin Etzrodt
+      - name: Martin Etzrodt
 
   - name: Leiden University
     url: https://www.universiteitleiden.nl/
@@ -28,3 +28,8 @@ groups:
       - name: Maarten Paul
       - name: Sebastian Posth
       - name: Joost Willemse
+
+  - name: German BioImaging
+    url: https://gerbi-gmb.de/
+    members:
+      - name: Josh Moore
