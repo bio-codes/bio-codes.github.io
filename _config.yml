@@ -1,11 +1,11 @@
 # Site settings
 title: "BIO-CODES"
-description: "Content-Based Identifiers for Bioimaging Data — ISO 24138 ISCC implementation for scientific imaging"
+description: "Similarity-Preserving Content Codes for Bioimaging Data — ISO 24138 ISCC implementation for scientific imaging"
 url: "https://bio-codes.github.io"
 baseurl: ""
 
 # Project
-tagline: "Content-Based Identifiers for Bioimaging Data"
+tagline: "Similarity-Preserving Content Codes for Bioimaging Data"
 
 # Build settings
 markdown: kramdown

@@ -6,11 +6,11 @@
 # ─────────────────────────────────────────────────────────────────
 
 title: BIO-CODES
-tagline: Content-Based Identifiers for Bioimaging Data
+tagline: Similarity-Preserving Content Codes for Bioimaging Data
 
 hero:
   eyebrow: "Funded by EU Horizon Europe · OSCARS Initiative"
-  headline: "Content-Based Identifiers<br/>for Bioimaging Data"
+  headline: "Similarity-Preserving Content Codes<br/>for Bioimaging Data"
   subheadline: >
     BIO-CODES implements the ISO 24138 International Standard Content Code
     for bioimaging data — enabling integrity verification, deduplication,
