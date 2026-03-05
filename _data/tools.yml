@@ -1,0 +1,100 @@
+# _data/tools.yml
+# ─────────────────────────────────────────────────────────────────
+# The BIO-CODES open-source toolkit.
+# Add or edit tools here; the template loops over this list.
+# Each tool: name, icon, description, install command, links, tags.
+# ─────────────────────────────────────────────────────────────────
+
+section_eyebrow: Open Source Tools
+section_title: The BIO-CODES toolkit
+section_sub: >
+  Three complementary tools covering the full bioimaging identification
+  workflow, all Apache 2.0 licensed.
+
+tools:
+  - id: iscc-sum
+    name: iscc-sum
+    icon: "∑"
+    status: "Stable v0.1"
+    status_color: green
+    description: >
+      High-performance ISCC Data-Code and Instance-Code generation.
+      Single-pass processing with a Rust core and Python bindings —
+      a drop-in replacement for md5sum and sha256sum in scientific
+      pipelines. Faster than SHA-256 at any data size.
+    install: pip install iscc-sum
+    platforms:
+      - Linux
+      - macOS
+      - Windows
+    formats:
+      - Zarr
+      - HDF5
+      - OME-TIFF
+      - NGFF
+    links:
+      docs: https://sum.iscc.codes/
+      quickstart: https://sum.iscc.codes/quickstart/
+      userguide: https://sum.iscc.codes/userguide/
+      api: https://sum.iscc.codes/developers/
+      specs: https://sum.iscc.codes/specifications/
+      github: https://github.com/bio-codes/iscc-sum
+      pypi: https://pypi.org/project/iscc-sum/
+    tags:
+      - Rust + Python
+      - CLI
+      - Apache 2.0
+
+  - id: iscc-bio
+    name: iscc-bio
+    icon: "🔬"
+    status: "Beta"
+    status_color: amber
+    description: >
+      ISCC processing for multi-dimensional bioimage data. Implements the
+      IMAGEWALK specification — deterministic Z→C→T plane traversal for
+      format-agnostic, reproducible content hashing of microscopy volumes.
+    install: pip install iscc-bio
+    platforms:
+      - Linux
+      - macOS
+      - Windows
+    formats:
+      - OME-TIFF
+      - OME-Zarr
+      - CZI
+      - ND2
+      - LIF
+      - DICOM
+      - HDF5
+    links:
+      github: https://github.com/bio-codes/iscc-bio
+      pypi: https://pypi.org/project/iscc-bio/
+    tags:
+      - Python
+      - OME-TIFF
+      - OME-Zarr
+      - CZI / ND2 / LIF
+      - Apache 2.0
+
+  - id: omero-iscc
+    name: omero-iscc
+    icon: "🔗"
+    status: "Alpha"
+    status_color: amber
+    description: >
+      OMERO server integration plugin. Automatically generates and stores
+      ISCC identifiers for images imported into OMERO, enabling
+      facility-level deduplication and FAIR-compliant provenance tracking.
+    install: pip install omero-iscc
+    platforms:
+      - Linux
+      - macOS
+    formats: []
+    links:
+      github: https://github.com/bio-codes/omero-iscc
+    tags:
+      - OMERO Plugin
+      - Python
+      - Server
+      - Apache 2.0

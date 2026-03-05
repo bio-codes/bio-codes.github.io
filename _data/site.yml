@@ -1,0 +1,46 @@
+# _data/site.yml
+# ─────────────────────────────────────────────────────────────────
+# Site-wide copy: hero section, meta, taglines, goal statement.
+# Edit this file to update the headline, subheadline, CTAs, and
+# the funding / project attribution strip.
+# ─────────────────────────────────────────────────────────────────
+
+title: BIO-CODES
+tagline: Content-Based Identifiers for Bioimaging Data
+
+hero:
+  eyebrow: EU Horizon Europe · OSCARS Initiative
+  headline: "Content-Based Identifiers<br/>for Bioimaging Data"
+  subheadline: >
+    BIO-CODES implements the ISO 24138 International Standard Content Code
+    for bioimaging data — enabling integrity verification, deduplication,
+    and cross-platform provenance to make your data AI-ready and FAIR-compliant.
+  cta_primary:
+    label: Get Started
+    url: https://sum.iscc.codes/quickstart/
+  cta_secondary:
+    label: Browse Tools
+    url: "#tools"
+
+meta:
+  - label: Apache 2.0 · Open Source
+  - label: ISO 24138:2024
+  - label: FAIR Principles
+
+goal:
+  headline: "GOAL: ISCC adoption in Euro-BioImaging and EOSC infrastructures"
+  euro_bioimaging_url: https://www.eurobioimaging.eu/
+  eosc_url: https://eosc.eu/
+
+funding:
+  grant_number: "101129751"
+  programme: EU Horizon Europe
+  programme_url: https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en
+  oscars_url: https://oscars-project.eu/
+  project_url: https://oscars-project.eu/projects/bio-codes-enhancing-ai-readiness-bioimaging-data-content-based-identifiers
+
+community:
+  forum_url: https://forum.image.sc/t/introducing-bio-codes-standardized-content-identifiers-for-bioimaging-data/116135
+  forum_label: Image.sc Forum
+  github_url: https://github.com/bio-codes
+  iscc_foundation_url: https://iscc.io

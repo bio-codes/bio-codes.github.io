@@ -1,0 +1,31 @@
+# Site settings
+title: "BIO-CODES"
+description: "Content-Based Identifiers for Bioimaging Data — ISO 24138 ISCC implementation for scientific imaging"
+url: "https://bio-codes.github.io"
+baseurl: ""
+
+# Project
+tagline: "Content-Based Identifiers for Bioimaging Data"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .DS_Store
+  - vendor
+  - .claude
+  - files
+  - Logos
+  - Copy
+  - iscc-flow-diagram-v3.html
+  - node_modules
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

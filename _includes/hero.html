@@ -1,0 +1,16 @@
+<section class="hero" id="hero">
+    <div class="container">
+        <p class="hero-eyebrow">{{ site.data.site.hero.eyebrow }}</p>
+        <h1 class="hero-headline">{{ site.data.site.hero.headline }}</h1>
+        <p class="hero-sub">{{ site.data.site.hero.subheadline }}</p>
+        <div class="hero-cta">
+            <a href="{{ site.data.site.hero.cta_primary.url }}" class="btn btn-primary" target="_blank" rel="noopener">{{ site.data.site.hero.cta_primary.label }}</a>
+            <a href="{{ site.data.site.hero.cta_secondary.url }}" class="btn btn-outline">{{ site.data.site.hero.cta_secondary.label }}</a>
+        </div>
+        <div class="hero-meta">
+            {% for item in site.data.site.meta %}
+            <span class="meta-badge">{{ item.label }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</section>

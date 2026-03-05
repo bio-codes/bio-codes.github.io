@@ -1,0 +1,48 @@
+# _data/features.yml
+# ─────────────────────────────────────────────────────────────────
+# Capability feature tiles (the 6-cell grid on the landing page).
+# Reorder, add, or edit features here without touching HTML.
+# ─────────────────────────────────────────────────────────────────
+
+section_eyebrow: Capabilities
+section_title: Built for scientific bioimaging
+section_sub: >
+  Addressing the specific challenges of large-scale imaging data
+  in modern research environments.
+
+features:
+  - icon: "🛡️"
+    title: ISO 24138:2024 Compliant
+    description: >
+      Implements the official international standard, ensuring global
+      interoperability across institutions, repositories, and tools.
+
+  - icon: "⚡"
+    title: High Performance
+    description: >
+      Rust-based engine processes data at 1+ GB/s — up to 184× faster
+      than the pure Python reference implementation, and faster than SHA-256.
+
+  - icon: "🔬"
+    title: Format Agnostic
+    description: >
+      Works with OME-TIFF, OME-Zarr, CZI, ND2, LIF, DICOM, HDF5 and
+      virtually any binary scientific data format.
+
+  - icon: "✅"
+    title: FAIR Principles
+    description: >
+      Supports Findable, Accessible, Interoperable, and Reusable data
+      principles as mandated by EOSC and European funding bodies.
+
+  - icon: "🤖"
+    title: AI-Ready Data
+    description: >
+      Persistent content-based identifiers survive format conversions
+      and enable reliable provenance tracking for AI training datasets.
+
+  - icon: "🔄"
+    title: Platform Integration
+    description: >
+      Native plugins for OMERO and Galaxy, with Napari, CellProfiler,
+      and ImageJ integrations in progress.

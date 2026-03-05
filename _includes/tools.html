@@ -1,0 +1,51 @@
+<section class="section" id="tools">
+    <div class="container">
+        <p class="section-eyebrow">{{ site.data.tools.section_eyebrow }}</p>
+        <h2 class="section-title">{{ site.data.tools.section_title }}</h2>
+        <p class="section-sub">{{ site.data.tools.section_sub }}</p>
+        <div class="tools-grid">
+            {% for tool in site.data.tools.tools %}
+            <div class="tool-card" id="{{ tool.id }}">
+                <div class="tool-header">
+                    <span class="tool-icon">{{ tool.icon }}</span>
+                    <div>
+                        <h3 class="tool-name">{{ tool.name }}</h3>
+                        <span class="tool-status tool-status-{{ tool.status_color }}">{{ tool.status }}</span>
+                    </div>
+                </div>
+                <p class="tool-desc">{{ tool.description }}</p>
+                <div class="tool-install">
+                    <code>{{ tool.install }}</code>
+                </div>
+                {% if tool.platforms.size > 0 %}
+                <div class="tool-meta">
+                    <span class="tool-meta-label">Platforms:</span>
+                    {% for platform in tool.platforms %}
+                    <span class="tool-platform">{{ platform }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if tool.formats.size > 0 %}
+                <div class="tool-meta">
+                    <span class="tool-meta-label">Formats:</span>
+                    {% for format in tool.formats %}
+                    <span class="tool-format">{{ format }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="tool-links">
+                    {% if tool.links.docs %}<a href="{{ tool.links.docs }}" target="_blank" rel="noopener">Docs</a>{% endif %}
+                    {% if tool.links.quickstart %}<a href="{{ tool.links.quickstart }}" target="_blank" rel="noopener">Quickstart</a>{% endif %}
+                    {% if tool.links.github %}<a href="{{ tool.links.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+                    {% if tool.links.pypi %}<a href="{{ tool.links.pypi }}" target="_blank" rel="noopener">PyPI</a>{% endif %}
+                </div>
+                <div class="tool-tags">
+                    {% for tag in tool.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

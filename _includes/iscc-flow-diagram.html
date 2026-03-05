@@ -1,0 +1,101 @@
+<div class="flow-diagram">
+<svg viewBox="0 0 800 336" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;font-family:'Readex Pro',Arial,sans-serif;" aria-label="ISCC-ID flow diagram showing how four components combine to form an ISCC-ID">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#00000020"/>
+    </filter>
+    <linearGradient id="outGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a6fd4"/>
+      <stop offset="100%" stop-color="#083370"/>
+    </linearGradient>
+    <marker id="arr1" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L6.5,3.5 Z" fill="#0054b2"/>
+    </marker>
+    <marker id="arr2" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L6.5,3.5 Z" fill="#6db82e"/>
+    </marker>
+    <marker id="arr3" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L6.5,3.5 Z" fill="#3a7fd4"/>
+    </marker>
+    <marker id="arr4" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L6.5,3.5 Z" fill="#6b5dbf"/>
+    </marker>
+    <marker id="dot1" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#0054b2"/>
+    </marker>
+    <marker id="dot2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#6db82e"/>
+    </marker>
+    <marker id="dot3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#3a7fd4"/>
+    </marker>
+    <marker id="dot4" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#6b5dbf"/>
+    </marker>
+  </defs>
+
+  <!-- Panel backgrounds -->
+  <rect x="4" y="8" width="228" height="70" rx="11" fill="#0e2b47" filter="url(#shadow)"/>
+  <rect x="4" y="90" width="228" height="70" rx="11" fill="#0e2b47" filter="url(#shadow)"/>
+  <rect x="4" y="172" width="228" height="70" rx="11" fill="#0e2b47" filter="url(#shadow)"/>
+  <rect x="4" y="254" width="228" height="70" rx="11" fill="#0e2b47" filter="url(#shadow)"/>
+
+  <!-- Row 1 -->
+  <circle cx="23" cy="25" r="10" fill="#0054b2"/>
+  <text x="23" y="29" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">1</text>
+  <text x="39" y="21" fill="#7eaacf" font-size="9">Algorithmically generated,</text>
+  <text x="39" y="32" fill="#7eaacf" font-size="9">reproducible data descriptor.</text>
+  <rect x="12" y="44" width="212" height="24" rx="12" fill="#0054b2"/>
+  <text x="118" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">ISCC-CODE</text>
+
+  <!-- Row 2 -->
+  <circle cx="23" cy="107" r="10" fill="#6db82e"/>
+  <text x="23" y="111" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">2</text>
+  <text x="39" y="103" fill="#7eaacf" font-size="9">Entity owning the ISCC-ID.</text>
+  <rect x="12" y="126" width="212" height="24" rx="12" fill="#6db82e"/>
+  <text x="118" y="142" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Actor</text>
+
+  <!-- Row 3 -->
+  <circle cx="23" cy="189" r="10" fill="#3a7fd4"/>
+  <text x="23" y="193" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">3</text>
+  <text x="39" y="185" fill="#7eaacf" font-size="9">Timestamp of ISCC-ID creation.</text>
+  <rect x="12" y="208" width="212" height="24" rx="12" fill="#3a7fd4"/>
+  <text x="118" y="224" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Creation Time</text>
+
+  <!-- Row 4 -->
+  <circle cx="23" cy="271" r="10" fill="#6b5dbf"/>
+  <text x="23" y="275" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">4</text>
+  <text x="39" y="267" fill="#7eaacf" font-size="9">URL for accessing ISCC-ID metadata.</text>
+  <rect x="12" y="290" width="212" height="24" rx="12" fill="#6b5dbf"/>
+  <text x="118" y="306" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Metadata URL</text>
+
+  <!-- Connector lines -->
+  <path d="M 232,56 C 390,56 420,90 577,90" fill="none" stroke="#0054b2" stroke-width="1.8" marker-start="url(#dot1)" marker-end="url(#arr1)"/>
+  <path d="M 232,138 C 390,138 420,160 577,160" fill="none" stroke="#6db82e" stroke-width="1.8" marker-start="url(#dot2)" marker-end="url(#arr2)"/>
+  <path d="M 232,220 C 390,220 420,210 577,210" fill="none" stroke="#3a7fd4" stroke-width="1.8" marker-start="url(#dot3)" marker-end="url(#arr3)"/>
+  <path d="M 232,302 C 390,302 420,275 577,275" fill="none" stroke="#6b5dbf" stroke-width="1.8" marker-start="url(#dot4)" marker-end="url(#arr4)"/>
+
+  <!-- ISCC-ID output box -->
+  <rect x="584" y="8" width="160" height="316" rx="16" fill="url(#outGrad)" filter="url(#shadow)"/>
+  <rect x="588" y="12" width="152" height="308" rx="13" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+
+  <!-- Lock icon -->
+  <g transform="translate(664, 118)">
+    <path d="M -15,-8 L -15,-20 A 15,15 0 0 1 15,-20 L 15,-8" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="3.5" stroke-linecap="round"/>
+    <rect x="-21" y="-8" width="42" height="34" rx="7" fill="rgba(255,255,255,0.13)" stroke="rgba(255,255,255,0.42)" stroke-width="1.5"/>
+    <circle cx="0" cy="11" r="6" fill="rgba(255,255,255,0.6)"/>
+    <line x1="0" y1="15" x2="0" y2="22" stroke="rgba(255,255,255,0.6)" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <text x="664" y="186" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700" letter-spacing="3">ISCC-ID</text>
+  <line x1="608" y1="200" x2="720" y2="200" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <text x="664" y="220" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" letter-spacing=".4">Persistent Content</text>
+  <text x="664" y="235" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" letter-spacing=".4">Identifier</text>
+
+  <circle cx="634" cy="268" r="2" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="648" cy="268" r="2" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="662" cy="268" r="2" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="676" cy="268" r="2" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="690" cy="268" r="2" fill="rgba(255,255,255,0.15)"/>
+</svg>
+</div>

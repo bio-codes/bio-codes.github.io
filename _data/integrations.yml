@@ -1,0 +1,82 @@
+# _data/integrations.yml
+# ─────────────────────────────────────────────────────────────────
+# Community platform integrations.
+# Add new platforms here; each becomes a chip/card in the
+# "Community & Integrations" section.
+# ─────────────────────────────────────────────────────────────────
+
+section_eyebrow: Community & Integrations
+section_title: Built for the open bioimaging ecosystem
+section_sub: >
+  BIO-CODES integrates with the tools researchers already use —
+  no new infrastructure required.
+
+platforms:
+  - id: omero
+    name: OMERO
+    url: https://www.openmicroscopy.org/omero/
+    plugin_url: https://github.com/bio-codes/omero-iscc
+    plugin_name: omero-iscc
+    status: available
+    description: >
+      Server plugin for automatic ISCC generation on image import.
+      Enables facility-level deduplication and provenance tracking
+      within OMERO's image management infrastructure.
+    capabilities:
+      - Automatic ISCC generation on import
+      - Facility-level deduplication
+      - FAIR-compliant metadata annotation
+
+  - id: galaxy
+    name: Galaxy
+    url: https://galaxyproject.org/
+    plugin_url: https://github.com/BMCV/galaxy-image-analysis/tree/master/tools/iscc-sum
+    plugin_name: galaxy-image-analysis / iscc-sum
+    status: available
+    description: >
+      Galaxy tools for ISCC generation, near-duplicate detection,
+      and content verification within reproducible Galaxy workflows.
+      Part of the BMCV galaxy-image-analysis tool suite.
+    capabilities:
+      - iscc_sum — ISCC code generation for any file
+      - iscc_similarity — near-duplicate detection across datasets
+      - iscc_verify — content integrity verification
+
+  - id: napari
+    name: Napari
+    url: https://napari.org/
+    plugin_url: https://github.com/bio-codes
+    plugin_name: napari-iscc
+    status: planned
+    description: >
+      Plugin integration for interactive image analysis and
+      ISCC annotation within the Napari viewer.
+    capabilities:
+      - Interactive ISCC annotation
+      - In-viewer provenance display
+
+  - id: cellprofiler
+    name: CellProfiler
+    url: https://cellprofiler.org/
+    plugin_url: https://github.com/bio-codes
+    plugin_name: ""
+    status: planned
+    description: >
+      Pipeline integration for high-content screening datasets,
+      enabling ISCC-based deduplication across large plate acquisitions.
+    capabilities:
+      - Pipeline-level ISCC generation
+      - High-content screening deduplication
+
+  - id: imagej
+    name: ImageJ / Fiji
+    url: https://fiji.sc/
+    plugin_url: https://github.com/bio-codes
+    plugin_name: ""
+    status: planned
+    description: >
+      Drop-in ISCC checksum support for existing ImageJ-based
+      workflows as a replacement for standard checksum tools.
+    capabilities:
+      - Drop-in md5/sha256 replacement
+      - Macro-scriptable ISCC generation

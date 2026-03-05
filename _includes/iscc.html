@@ -1,0 +1,41 @@
+<section class="section" id="iscc">
+    <div class="container">
+        <p class="section-eyebrow">{{ site.data.iscc.standard.iso }}</p>
+        <h2 class="section-title">{{ site.data.iscc.standard.name }}</h2>
+        <p class="section-sub">{{ site.data.iscc.standard.description }}</p>
+
+        <div class="iscc-levels">
+            {% for level in site.data.iscc.standard.similarity_levels %}
+            <div class="iscc-level">
+                <span class="level-dot"></span>
+                <div>
+                    <strong>{{ level.label }}</strong>
+                    <p>{{ level.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="iscc-links">
+            <a href="{{ site.data.iscc.standard.homepage_url }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">ISCC Homepage</a>
+            <a href="{{ site.data.iscc.standard.spec_url }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Specification</a>
+            <a href="{{ site.data.iscc.standard.iso_url }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">ISO 24138</a>
+        </div>
+
+        <div class="iscc-id-section">
+            <h3 class="iscc-id-title">{{ site.data.iscc.iscc_id.name }}</h3>
+            <p class="iscc-id-desc">{{ site.data.iscc.iscc_id.description }}</p>
+
+            <div class="iscc-properties">
+                {% for prop in site.data.iscc.iscc_id.properties %}
+                <div class="iscc-property">
+                    <strong>{{ prop.label }}</strong>
+                    <p>{{ prop.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% include iscc-flow-diagram.html %}
+        </div>
+    </div>
+</section>

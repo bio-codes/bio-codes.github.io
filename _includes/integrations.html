@@ -1,0 +1,37 @@
+<section class="section section-alt" id="integrations">
+    <div class="container">
+        <p class="section-eyebrow">{{ site.data.integrations.section_eyebrow }}</p>
+        <h2 class="section-title">{{ site.data.integrations.section_title }}</h2>
+        <p class="section-sub">{{ site.data.integrations.section_sub }}</p>
+        <div class="integrations-grid">
+            {% for platform in site.data.integrations.platforms %}
+            <div class="integration-card {% if platform.status == 'planned' %}integration-planned{% endif %}">
+                <div class="integration-header">
+                    <img src="{{ '/assets/images/' | relative_url }}{{ platform.name | replace: ' / ', '_' | replace: ' ', '_' }}_logo.png"
+                         alt="{{ platform.name }}"
+                         class="integration-logo"
+                         loading="lazy"
+                         onerror="this.style.display='none'">
+                    <div>
+                        <h3 class="integration-name">
+                            <a href="{{ platform.url }}" target="_blank" rel="noopener">{{ platform.name }}</a>
+                        </h3>
+                        <span class="integration-status integration-status-{{ platform.status }}">
+                            {% if platform.status == 'available' %}Available{% else %}Planned{% endif %}
+                        </span>
+                    </div>
+                </div>
+                <p class="integration-desc">{{ platform.description }}</p>
+                <ul class="integration-caps">
+                    {% for cap in platform.capabilities %}
+                    <li>{{ cap }}</li>
+                    {% endfor %}
+                </ul>
+                {% if platform.status == 'available' and platform.plugin_url %}
+                <a href="{{ platform.plugin_url }}" class="integration-link" target="_blank" rel="noopener">{{ platform.plugin_name }}</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

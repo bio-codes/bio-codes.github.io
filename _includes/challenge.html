@@ -1,0 +1,22 @@
+<section class="section section-alt" id="challenge">
+    <div class="container">
+        <h2 class="section-title">{{ site.data.challenge.section_title }}</h2>
+        <div class="challenge-grid">
+            {% for card in site.data.challenge.cards %}
+            <div class="challenge-card challenge-{{ card.id }}">
+                <div class="challenge-icon">{{ card.icon }}</div>
+                <h3 class="challenge-heading">{{ card.heading }}</h3>
+                <ul class="challenge-list">
+                    {% for item in card.items %}
+                    <li>
+                        {% if item.strong %}<strong>{{ item.strong }}</strong>{% endif %}
+                        {{ item.text }}
+                        {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">Learn more</a>{% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

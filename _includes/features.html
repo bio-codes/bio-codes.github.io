@@ -1,0 +1,16 @@
+<section class="section section-alt" id="features">
+    <div class="container">
+        <p class="section-eyebrow">{{ site.data.features.section_eyebrow }}</p>
+        <h2 class="section-title">{{ site.data.features.section_title }}</h2>
+        <p class="section-sub">{{ site.data.features.section_sub }}</p>
+        <div class="features-grid">
+            {% for feature in site.data.features.features %}
+            <div class="feature-card">
+                <div class="feature-icon">{{ feature.icon }}</div>
+                <h3 class="feature-title">{{ feature.title }}</h3>
+                <p class="feature-desc">{{ feature.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
