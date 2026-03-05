@@ -97,10 +97,11 @@ ul {
   gap: 8px;
 }
 
-.nav-logo svg {
+.nav-logo img {
   width: 32px;
-  height: 29px;
+  height: 32px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .nav-logo:hover {
@@ -785,10 +786,11 @@ ul {
   letter-spacing: 0.04em;
 }
 
-.footer-logo svg {
+.footer-logo img {
   width: 32px;
-  height: 29px;
+  height: 32px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .footer-logo:hover {
