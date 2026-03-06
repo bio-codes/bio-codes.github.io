@@ -5,14 +5,14 @@
 # the funding / project attribution strip.
 # ─────────────────────────────────────────────────────────────────
 
-title: BIO-CODES
+title: BIOCODES
 tagline: Similarity-Preserving Content Codes for Bioimaging Data
 
 hero:
   eyebrow: "Funded by EU Horizon Europe · OSCARS Initiative"
   headline: "Similarity-Preserving Content Codes<br/>for Bioimaging Data"
   subheadline: >
-    BIO-CODES implements the ISO 24138 International Standard Content Code
+    BIOCODES implements the ISO 24138 International Standard Content Code
     for bioimaging data — enabling integrity verification, deduplication,
     and cross-platform provenance to make your data AI-ready and FAIR-compliant.
   cta_primary:

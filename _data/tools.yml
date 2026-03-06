@@ -1,12 +1,12 @@
 # _data/tools.yml
 # ─────────────────────────────────────────────────────────────────
-# The BIO-CODES open-source toolkit.
+# The BIOCODES open-source toolkit.
 # Add or edit tools here; the template loops over this list.
 # Each tool: name, icon, description, install command, links, tags.
 # ─────────────────────────────────────────────────────────────────
 
 section_eyebrow: Open Source Tools
-section_title: The BIO-CODES toolkit
+section_title: The BIOCODES toolkit
 section_sub: >
   Three complementary tools covering the full bioimaging identification
   workflow, all Apache 2.0 licensed.

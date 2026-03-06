@@ -1,5 +1,5 @@
 # Site settings
-title: "BIO-CODES"
+title: "BIOCODES"
 description: "Similarity-Preserving Content Codes for Bioimaging Data — ISO 24138 ISCC implementation for scientific imaging"
 url: "https://bio-codes.github.io"
 baseurl: ""
