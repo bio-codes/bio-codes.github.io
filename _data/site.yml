@@ -12,9 +12,9 @@ hero:
   eyebrow: "Funded by EU Horizon Europe · OSCARS Initiative"
   headline: "Similarity-Preserving Codes<br/>for Bioimaging Data"
   subheadline: >
-    BIOCODES implements the ISO 24138 International Standard Content Code
-    for bioimaging data — enabling integrity verification, deduplication,
-    and cross-platform provenance to make your data AI-ready and FAIR-compliant.
+    BIOCODES brings the ISO 24138 International Standard Content Code
+    to bioimaging data. Verify integrity, find duplicates, and trace
+    provenance across platforms — from raw data to publication.
   cta_primary:
     label: Get Started
     url: https://sum.iscc.codes/quickstart/

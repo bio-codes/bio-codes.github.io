@@ -30,9 +30,9 @@ iscc_id:
   registry_url: https://github.com/iscc/iscc-registry
   did_method_url: https://ieps.iscc.codes/iep-0015/
   description: >
-    A persistent identifier derived from ISCC content codes. ISCC-IDs link
-    raw data, processed derivatives, and published figures into a single
-    auditable chain of provenance.
+    A persistent identifier derived from ISCC content codes. ISCC-IDs
+    connect raw data, processed derivatives, and published figures into
+    one auditable provenance chain.
   properties:
     - label: Fingerprinting
       description: Helps find metadata even when filenames or paths have changed.
@@ -42,7 +42,7 @@ iscc_id:
       description: Demonstrates when content was created or registered.
     - label: Secure linking
       description: >
-        Enables provenance verification across repositories, publications,
+        Verifies provenance across repositories, publications,
         and analysis pipelines.
   components:
     - number: 1

@@ -5,7 +5,7 @@
 # Items support optional `strong` for the bold lead-in phrase.
 # ─────────────────────────────────────────────────────────────────
 
-section_title: "Enhancing AI-Readiness of Bioimaging Data<br/>with Content-Based Identifiers"
+section_title: "Making Bioimaging Data AI-Ready<br/>with Content-Based Identifiers"
 
 cards:
   - id: challenge
@@ -18,7 +18,7 @@ cards:
           publications — with no shared identity across them.
       - strong: "No Audit Trail:"
         text: >
-          Challenges to verify data integrity or detect manipulation
+          No reliable way to verify data integrity or detect manipulation
           after the fact.
       - strong: "Lost Provenance:"
         text: >
@@ -39,10 +39,10 @@ cards:
           from available data — independently and without any central authority.
           Use the ISCC Generator at iscc.io/resources.
         url: https://iscc.io/resources/
-      - strong: "Generating, signing, and timestamping ISCCs"
+      - strong: "Sign and timestamp ISCCs"
         text: >
-          creates persistent identifiers to securely reference and link
-          data in repositories with images in papers.
+          to create persistent identifiers that securely link repository
+          data with the figures in published papers.
 
   - id: impact
     icon: ""
@@ -50,7 +50,7 @@ cards:
     items:
       - strong: "Cryptographic figure data verification"
         text: "via the ISCC audit trail."
-      - strong: "Improved data integrity, transparency, and reusability."
-        text: ""
-      - strong: "Enhanced AI-readiness"
-        text: "of bioimaging datasets for trusted AI applications."
+      - strong: "Better data integrity and reusability"
+        text: "through transparent, verifiable provenance chains."
+      - strong: "AI-ready bioimaging datasets"
+        text: "with verified origins, so AI models can train on data you can trace."
