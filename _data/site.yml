@@ -6,11 +6,11 @@
 # ─────────────────────────────────────────────────────────────────
 
 title: BIOCODES
-tagline: Similarity-Preserving Content Codes for Bioimaging Data
+tagline: Similarity-Preserving Codes for Bioimaging Data
 
 hero:
   eyebrow: "Funded by EU Horizon Europe · OSCARS Initiative"
-  headline: "Similarity-Preserving Content Codes<br/>for Bioimaging Data"
+  headline: "Similarity-Preserving Codes<br/>for Bioimaging Data"
   subheadline: >
     BIOCODES implements the ISO 24138 International Standard Content Code
     for bioimaging data — enabling integrity verification, deduplication,
