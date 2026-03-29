@@ -19,9 +19,9 @@ platforms:
     plugin_name: omero-iscc
     status: available
     description: >
-      Server plugin for automatic ISCC generation on image import.
-      Enables facility-level deduplication and provenance tracking
-      within OMERO's image management infrastructure.
+      Server plugin that generates ISCCs automatically on image import.
+      Facilities get deduplication and provenance tracking without
+      changing their existing OMERO workflows.
     capabilities:
       - Automatic ISCC generation on import
       - Facility-level deduplication
@@ -62,8 +62,8 @@ platforms:
     plugin_name: ""
     status: planned
     description: >
-      Pipeline integration for high-content screening datasets,
-      enabling ISCC-based deduplication across large plate acquisitions.
+      Pipeline integration for high-content screening datasets.
+      Deduplicates across large plate acquisitions using ISCC codes.
     capabilities:
       - Pipeline-level ISCC generation
       - High-content screening deduplication

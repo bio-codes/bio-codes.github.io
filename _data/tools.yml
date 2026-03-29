@@ -83,9 +83,9 @@ tools:
     status: "Alpha"
     status_color: amber
     description: >
-      OMERO server integration plugin. Automatically generates and stores
-      ISCC identifiers for images imported into OMERO, enabling
-      facility-level deduplication and FAIR-compliant provenance tracking.
+      OMERO server plugin. Generates and stores ISCC identifiers
+      automatically on image import, so facilities can deduplicate
+      and track provenance without extra steps.
     install: ""
     platforms:
       - Linux
