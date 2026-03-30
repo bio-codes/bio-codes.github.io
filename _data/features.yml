@@ -7,15 +7,15 @@
 section_eyebrow: Capabilities
 section_title: Built for scientific data & bioimaging
 section_sub: >
-  Addressing the specific challenges of large-scale imaging data
-  in modern research environments.
+  Designed for the specific problems of large-scale imaging data
+  in research.
 
 features:
   - icon: ""
     title: ISO 24138:2024 Compliant
     description: >
-      Implements the official international standard, ensuring global
-      interoperability across institutions, repositories, and tools.
+      Follows the international standard, so codes generated anywhere
+      are compatible everywhere — across institutions, repositories, and tools.
 
   - icon: ""
     title: High Performance
@@ -32,14 +32,14 @@ features:
   - icon: ""
     title: FAIR Principles
     description: >
-      Supports Findable, Accessible, Interoperable, and Reusable data
-      principles as mandated by EOSC and European funding bodies.
+      Meets the Findable, Accessible, Interoperable, and Reusable data
+      requirements from EOSC and European funding bodies.
 
   - icon: ""
     title: AI-Ready Data
     description: >
-      Persistent content-based identifiers survive format conversions
-      and enable reliable provenance tracking for AI training datasets.
+      Content-based identifiers survive format conversions, so provenance
+      stays intact when datasets move into AI training pipelines.
 
   - icon: ""
     title: Platform Integration

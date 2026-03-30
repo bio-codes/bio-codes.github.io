@@ -9,9 +9,8 @@ standard:
   short: ISCC
   iso: ISO 24138
   iso_url: https://www.iso.org/standard/77899.html
-  homepage_url: https://iscc.codes/
-  spec_url: https://iscc.codes/specification/
-  concept_url: https://iscc.codes/concept/
+  homepage_url: https://iscc.io
+  spec_url: https://ieps.iscc.codes
   description: >
     A standardised (ISO 24138) multi-component fingerprint for various
     media types and file formats. Computed from the asset itself — it
@@ -30,9 +29,9 @@ iscc_id:
   registry_url: https://github.com/iscc/iscc-registry
   did_method_url: https://ieps.iscc.codes/iep-0015/
   description: >
-    A persistent identifier derived from ISCC content codes. ISCC-IDs link
-    raw data, processed derivatives, and published figures into a single
-    auditable chain of provenance.
+    A persistent identifier derived from ISCC content codes. ISCC-IDs
+    connect raw data, processed derivatives, and published figures into
+    one auditable provenance chain.
   properties:
     - label: Fingerprinting
       description: Helps find metadata even when filenames or paths have changed.
@@ -42,22 +41,18 @@ iscc_id:
       description: Demonstrates when content was created or registered.
     - label: Secure linking
       description: >
-        Enables provenance verification across repositories, publications,
+        Verifies provenance across repositories, publications,
         and analysis pipelines.
   components:
     - number: 1
       name: ISCC-CODE
       description: Algorithmically generated, reproducible data descriptor.
-      url: https://github.com/iscc/iscc-core
     - number: 2
       name: Actor
       description: Entity owning the ISCC-ID.
-      url: https://github.com/iscc/iscc-registry
     - number: 3
       name: Creation Time
       description: Timestamp of ISCC-ID creation.
-      url:
     - number: 4
       name: Metadata URL
       description: URL for accessing ISCC-ID metadata.
-      url: https://iscc.codes/specification/

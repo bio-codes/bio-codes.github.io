@@ -5,7 +5,7 @@ url: "https://bio-codes.github.io"
 baseurl: ""
 
 # Project
-tagline: "Similarity-Preserving Content Codes for Bioimaging Data"
+tagline: "Similarity-Preserving Codes for Bioimaging Data"
 
 # Build settings
 markdown: kramdown
