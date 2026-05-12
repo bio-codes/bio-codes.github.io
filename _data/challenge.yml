@@ -15,7 +15,7 @@ cards:
       - strong: "Growing volume of data:"
         text: >
           Bio(imaging) data exist at different states — raw, repository,
-          publications — with no shared identity across them.
+          publications - with no shared identity across them.
       - strong: "No Audit Trail:"
         text: >
           No reliable way to verify data integrity or detect manipulation
@@ -31,14 +31,13 @@ cards:
     items:
       - strong: "International Standard Content Code (ISCC ISO 24138)."
         text: >
-          Open and open-source. Interoperable content identification &
-          fingerprinting system. Computed directly from the asset itself —
+          Interoperable and open-source content identification &
+          fingerprinting system. Computed directly from the asset itself -
           can never be removed or decoupled from the data.
       - strong: "Anyone can compute ISCCs"
         text: >
-          from available data — independently and without any central authority.
-          Use the ISCC Generator at iscc.io/resources.
-        url: https://iscc.io/resources/
+          from available data - independently and without any central authority.
+        url: https://iscc.io
       - strong: "Sign and timestamp ISCCs"
         text: >
           to create persistent identifiers that securely link repository

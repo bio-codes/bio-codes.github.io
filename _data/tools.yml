@@ -68,6 +68,7 @@ tools:
       - DICOM
       - HDF5
     links:
+      viz: /viz/imagewalk/
       github: https://github.com/bio-codes/iscc-bio
       pypi: https://pypi.org/project/iscc-bio/
     tags:
