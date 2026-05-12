@@ -1009,6 +1009,181 @@ ul {
   color: #c98adb;
 }
 
+/* ── iscc-bio / IMAGEWALK section ──────────────────────────────── */
+.iscc-bio-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.iscc-bio-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.iscc-bio-highlight {
+  padding: 20px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.iscc-bio-highlight:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.iscc-bio-highlight-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-dark-panel);
+}
+
+.iscc-bio-highlight-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  line-height: 1.55;
+}
+
+.iscc-bio-viz-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.iscc-bio-viz-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--color-dark-panel);
+  border: 1px solid rgba(123, 45, 142, 0.3);
+  transition: box-shadow 0.3s, transform 0.3s;
+  width: 100%;
+  max-width: 380px;
+}
+
+.iscc-bio-viz-link:hover {
+  box-shadow: 0 8px 40px rgba(123, 45, 142, 0.3);
+  transform: translateY(-4px);
+}
+
+.iscc-bio-viz-graphic {
+  position: relative;
+  width: 200px;
+  height: 160px;
+}
+
+.viz-cube {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 30px;
+  left: 60px;
+  border: 2px solid rgba(0, 240, 255, 0.6);
+  border-radius: 4px;
+  background: rgba(0, 240, 255, 0.05);
+  transform: perspective(400px) rotateX(20deg) rotateY(-25deg);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.viz-cube::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1.5px solid rgba(255, 43, 214, 0.5);
+  border-radius: 2px;
+  background: rgba(255, 43, 214, 0.05);
+  box-shadow: 0 0 12px rgba(255, 43, 214, 0.15);
+}
+
+.viz-cube::after {
+  content: '';
+  position: absolute;
+  inset: 24px;
+  background: rgba(184, 255, 58, 0.15);
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(184, 255, 58, 0.2);
+}
+
+.viz-trail {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 140px;
+  height: 120px;
+  border: none;
+  background:
+    linear-gradient(135deg, transparent 20%, rgba(255, 205, 59, 0.3) 20%, rgba(255, 205, 59, 0.3) 21%, transparent 21%),
+    linear-gradient(45deg, transparent 45%, rgba(255, 205, 59, 0.2) 45%, rgba(255, 205, 59, 0.2) 46%, transparent 46%),
+    linear-gradient(135deg, transparent 55%, rgba(255, 205, 59, 0.15) 55%, rgba(255, 205, 59, 0.15) 56%, transparent 56%);
+  pointer-events: none;
+}
+
+.viz-label-z,
+.viz-label-c,
+.viz-label-t {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.viz-label-z {
+  top: 8px;
+  left: 50px;
+  color: #00f0ff;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+.viz-label-c {
+  bottom: 10px;
+  right: 20px;
+  color: #ff2bd6;
+  text-shadow: 0 0 8px rgba(255, 43, 214, 0.6);
+}
+
+.viz-label-t {
+  bottom: 10px;
+  left: 20px;
+  color: #b8ff3a;
+  text-shadow: 0 0 8px rgba(184, 255, 58, 0.6);
+}
+
+.iscc-bio-viz-cta {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #e8ecff;
+  letter-spacing: 0.04em;
+  padding: 8px 20px;
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  border-radius: 4px;
+  background: rgba(0, 240, 255, 0.08);
+  transition: all 0.2s;
+}
+
+.iscc-bio-viz-link:hover .iscc-bio-viz-cta {
+  border-color: rgba(0, 240, 255, 0.8);
+  background: rgba(0, 240, 255, 0.15);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+  color: #fff;
+}
+
+.iscc-bio-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* ── Responsive ────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .nav-toggle {
@@ -1069,6 +1244,10 @@ ul {
   }
 
   .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .iscc-bio-content {
     grid-template-columns: 1fr;
   }
 

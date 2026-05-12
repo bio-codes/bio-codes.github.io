@@ -1,0 +1,36 @@
+<section class="section" id="imagewalk">
+    <div class="container">
+        <p class="section-eyebrow">{{ site.data.iscc-bio.section_eyebrow }}</p>
+        <h2 class="section-title">{{ site.data.iscc-bio.section_title }}</h2>
+        <p class="section-sub">{{ site.data.iscc-bio.section_sub }}</p>
+
+        <div class="iscc-bio-content">
+            <div class="iscc-bio-highlights">
+                {% for item in site.data.iscc-bio.highlights %}
+                <div class="iscc-bio-highlight">
+                    <h3 class="iscc-bio-highlight-title">{{ item.title }}</h3>
+                    <p class="iscc-bio-highlight-desc">{{ item.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="iscc-bio-viz-preview">
+                <a href="{{ site.data.iscc-bio.viz_url | relative_url }}" class="iscc-bio-viz-link">
+                    <div class="iscc-bio-viz-graphic">
+                        <div class="viz-cube"></div>
+                        <div class="viz-trail"></div>
+                        <div class="viz-label-z">Z</div>
+                        <div class="viz-label-c">C</div>
+                        <div class="viz-label-t">T</div>
+                    </div>
+                    <span class="iscc-bio-viz-cta">{{ site.data.iscc-bio.viz_label }} &rarr;</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="iscc-bio-actions">
+            <a href="{{ site.data.iscc-bio.viz_url | relative_url }}" class="btn btn-primary">{{ site.data.iscc-bio.viz_label }}</a>
+            <a href="{{ site.data.iscc-bio.github_url }}" class="btn btn-outline" target="_blank" rel="noopener">{{ site.data.iscc-bio.github_label }}</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+# _data/iscc-bio.yml
+# Content for the iscc-bio / IMAGEWALK visualization section.
+
+section_eyebrow: "iscc-bio"
+section_title: "IMAGEWALK — Bio Codes for multi-dimensional bioimages"
+section_sub: >
+  iscc-bio implements deterministic plane traversal (Z → C → T) for
+  format-agnostic, reproducible content identification of microscopy volumes.
+  Explore the interactive 3D visualization to see how ISCC-SUM and per-plane
+  SIMPRINTs are generated from multi-scene bioimage data.
+
+highlights:
+  - title: "Deterministic traversal"
+    description: >
+      IMAGEWALK defines a canonical Z → C → T ordering that produces
+      identical content codes regardless of file format or reader library.
+  - title: "Per-plane SIMPRINTs"
+    description: >
+      Each 2D plane is extracted, flattened to row-major order, normalized
+      to big-endian bytes, and hashed to produce a similarity-preserving
+      fingerprint.
+  - title: "Multi-scene support"
+    description: >
+      Handles multi-scene containers (CZI, ND2, LIF) — each scene gets
+      its own ISCC-SUM, enabling granular identification within complex
+      acquisitions.
+
+viz_url: "/viz/imagewalk/"
+viz_label: "Launch IMAGEWALK Playground"
+github_url: "https://github.com/bio-codes/iscc-bio"
+github_label: "View on GitHub"
