@@ -21,7 +21,10 @@ tools:
       High-performance ISCC Data-Code and Instance-Code generation.
       Single-pass processing with a Rust core and Python bindings —
       a drop-in replacement for md5sum and sha256sum in scientific
-      pipelines. Faster than SHA-256 at any data size.
+      pipelines. Faster than SHA-256 at any data size. Core
+      algorithms are integrated into iscc-lib, a polyglot Rust
+      library with native bindings for Python, Node.js, Go, Java,
+      .NET, Swift, Kotlin, Ruby, C++, and WebAssembly.
     install: pip install iscc-sum
     platforms:
       - Linux
@@ -40,9 +43,11 @@ tools:
       specs: https://sum.iscc.codes/specifications/
       github: https://github.com/bio-codes/iscc-sum
       pypi: https://pypi.org/project/iscc-sum/
+      iscc_lib: https://github.com/iscc/iscc-lib
     tags:
       - Rust + Python
       - CLI
+      - Polyglot via iscc-lib
       - Apache 2.0
 
   - id: iscc-bio
