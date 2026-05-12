@@ -662,6 +662,55 @@ layout: null
   @media (max-width: 1100px) {
     .app { grid-template-columns: 280px 1fr 280px; }
   }
+
+  @media (max-width: 900px) {
+    .app {
+      grid-template-columns: 260px 1fr;
+      grid-template-rows: 56px 1fr auto auto;
+      grid-template-areas:
+        "header header"
+        "left   center"
+        "bottom bottom"
+        "right  right";
+    }
+    .sidebar { border-left: none; border-top: 1px solid var(--border); max-height: 240px; }
+    .bottom { height: auto; max-height: 160px; }
+  }
+
+  @media (max-width: 640px) {
+    html, body { overflow: auto; overflow-x: hidden; }
+    .app {
+      grid-template-columns: 1fr;
+      grid-template-rows: 48px minmax(300px, 50vh) auto auto auto;
+      grid-template-areas:
+        "header"
+        "center"
+        "left"
+        "bottom"
+        "right";
+      height: auto;
+      min-height: 100vh;
+    }
+    header.panel { padding: 0 12px; gap: 12px; }
+    .brand-text .sub { display: none; }
+    .source-toggle { display: none; }
+    .controls {
+      border-right: none; border-top: 1px solid var(--border);
+      max-height: none; overflow-y: visible;
+    }
+    .center { min-height: 300px; }
+    .sidebar {
+      border-left: none; border-top: 1px solid var(--border);
+      max-height: 300px; overflow-y: auto;
+    }
+    .bottom {
+      height: auto; max-height: none;
+      border-top: 1px solid var(--border);
+    }
+    .bottom-row { flex-wrap: wrap; gap: 8px; }
+    .flow-box { min-width: 120px; flex: 1 1 120px; }
+    .flow-arrow { width: 20px; font-size: 14px; }
+  }
 </style>
 </head>
 <body>
