@@ -24,6 +24,13 @@ highlights:
       Handles multi-scene containers (CZI, ND2, LIF) — each scene gets
       its own ISCC-SUM, enabling granular identification within complex
       acquisitions.
+  - title: "Similarity search at scale"
+    description: >
+      Outputs conform to the
+      <a href="https://github.com/iscc/iscc-search" target="_blank" rel="noopener">iscc-search</a>
+      index schema - no conversion needed. ISCC-SUMs and per-plane
+      SIMPRINTs can be indexed directly for asset-level and segment-level
+      similarity search across billions of codes.
 
 viz_url: "/viz/imagewalk/"
 viz_label: "Launch IMAGEWALK Playground"
