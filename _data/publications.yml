@@ -1,0 +1,47 @@
+# _data/publications.yml
+# ─────────────────────────────────────────────────────────────────
+# BIOCODES publications: preprints, papers, and citable software.
+#
+# Mirrors the Presentations page style (thumbnail preview + actions).
+# Each entry can be backed by a local PDF (`file`) and/or an external
+# record (`url`, e.g. a DOI landing page). `thumb` is the preview image
+# in /assets/publications/thumbs/.
+#
+# Fields: title, authors, venue, date (ISO, for order), date_display,
+#   type, doi, doi_url, url (external record), file (local PDF, optional),
+#   thumb, license, license_url.
+# ─────────────────────────────────────────────────────────────────
+
+section_eyebrow: Publications
+section_title: Papers, Preprints & Software
+section_sub: >
+  Peer-reviewed papers, preprints, and citable software from the
+  BIOCODES project. Where available, the full text is viewable in the
+  browser and free to download; every entry links to its DOI of record.
+
+publications:
+  - title: "Evolving FAIR Image Analysis in Galaxy for Cross-domain and AI-ready Applications"
+    authors: "Diana Chiang, Pavankumar Videm, David Lopez Tabernero, Maarten W. Paul, Alireza Heidari, Martin Etzrodt, Beatriz Serrano-Solano, Leonid Kostrykin"
+    venue: "BioHackrXiv · ELIXIR BioHackathon Europe 2025 (Project 9)"
+    date: 2026-03-31
+    date_display: "31 March 2026"
+    type: Preprint
+    doi: "10.37044/osf.io/tsxby_v1"
+    doi_url: https://doi.org/10.37044/osf.io/tsxby_v1
+    file: galaxy-fair-image-analysis-biohackathon-2025.pdf
+    thumb: galaxy-fair-image-analysis-biohackathon-2025.png
+    license: CC BY 4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+
+  - title: "ISCC-SUM: High-Performance ISCC Generation for Bioimaging Data"
+    authors: "Titusz Pan"
+    venue: "Zenodo · BIO-CODES / OSCARS Project"
+    date: 2025-07-28
+    date_display: "28 July 2025"
+    type: Software
+    doi: "10.5281/zenodo.16541262"
+    doi_url: https://doi.org/10.5281/zenodo.16541262
+    url: https://zenodo.org/records/16541262
+    thumb: iscc-sum.png
+    license: Apache 2.0
+    license_url: https://www.apache.org/licenses/LICENSE-2.0

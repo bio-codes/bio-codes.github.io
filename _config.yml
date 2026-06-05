@@ -24,6 +24,7 @@ exclude:
   - Copy
   - iscc-flow-diagram-v3.html
   - node_modules
+  - Presentations
 
 # Plugins
 plugins:
