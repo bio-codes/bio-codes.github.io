@@ -1,0 +1,55 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+description: BIOCODES papers, preprints, and citable software — viewable, downloadable, and linked to their DOI of record.
+---
+
+<section class="section" id="publications" style="padding-top: 120px;">
+    <div class="container">
+        <p class="section-eyebrow">{{ site.data.publications.section_eyebrow }}</p>
+        <h1 class="section-title">{{ site.data.publications.section_title }}</h1>
+        <p class="section-sub">{{ site.data.publications.section_sub }}</p>
+
+        <div class="pres-grid">
+            {% for p in site.data.publications.publications %}
+            {% if p.file %}{% assign target = p.file | prepend: '/assets/publications/' | relative_url %}{% else %}{% assign target = p.url %}{% endif %}
+            {% assign thumb = p.thumb | prepend: '/assets/publications/thumbs/' | relative_url %}
+            <article class="pres-card">
+                <a class="pres-preview" href="{{ target }}" target="_blank" rel="noopener" aria-label="Open {{ p.title }}">
+                    <img src="{{ thumb }}" loading="lazy" alt="Preview of {{ p.title }}">
+                    <span class="pres-preview-hint">Open ↗</span>
+                </a>
+
+                <div class="pres-body">
+                    <div class="pres-meta-top">
+                        <span class="pres-type pres-type-{{ p.type | slugify }}">{{ p.type }}</span>
+                        {% if p.date_display %}<span class="pres-date">{{ p.date_display }}</span>{% endif %}
+                    </div>
+
+                    <h3 class="pres-title">{{ p.title }}</h3>
+
+                    <p class="pres-event">{{ p.venue }}</p>
+                    <p class="pres-presenter">{{ p.authors }}</p>
+
+                    <div class="pres-actions">
+                        {% if p.file %}
+                        <a class="btn btn-primary btn-sm" href="{{ p.file | prepend: '/assets/publications/' | relative_url }}" target="_blank" rel="noopener">View</a>
+                        <a class="btn btn-outline btn-sm" href="{{ p.file | prepend: '/assets/publications/' | relative_url }}" download>Download PDF</a>
+                        {% elsif p.url %}
+                        <a class="btn btn-primary btn-sm" href="{{ p.url }}" target="_blank" rel="noopener">View record</a>
+                        {% endif %}
+                        {% if p.doi_url %}<a class="btn btn-outline btn-sm" href="{{ p.doi_url }}" target="_blank" rel="noopener">DOI</a>{% endif %}
+                    </div>
+
+                    <p class="pres-license">
+                        {% if p.doi %}DOI: <a href="{{ p.doi_url }}" target="_blank" rel="noopener">{{ p.doi }}</a><br>{% endif %}
+                        Licensed under
+                        <a href="{{ p.license_url }}" target="_blank" rel="noopener">{{ p.license }}</a>.
+                    </p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

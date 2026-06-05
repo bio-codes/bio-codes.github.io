@@ -1,0 +1,150 @@
+# _data/presentations.yml
+# ─────────────────────────────────────────────────────────────────
+# Public BIOCODES presentations, posters, and flash talks.
+#
+# Each .pptx in /Presentations was converted to PDF (LibreOffice) and
+# placed in /assets/presentations/. The page below loops over this
+# list: every entry is viewable inline and downloadable, and carries
+# a CC BY 4.0 attribution line built from `presenter` + the project.
+#
+# To add a presentation:
+#   1. Drop the PDF into /assets/presentations/
+#   2. Add an entry here (newest first). `file` is the PDF filename.
+# Fields: title, presenter, affiliation, event, date (ISO, for order),
+#   date_display, type, file, license_year, event_url (optional).
+# ─────────────────────────────────────────────────────────────────
+
+section_eyebrow: Presentations
+section_title: Talks, Posters & Slides
+section_sub: >
+  Where BIOCODES has been presented — conference talks, community
+  introductions, flash talks, and posters. Every presentation is
+  viewable in the browser and free to download. All materials are
+  licensed under Creative Commons Attribution 4.0 (CC BY 4.0).
+
+license_url: https://creativecommons.org/licenses/by/4.0/
+license_name: CC BY 4.0
+
+presentations:
+  - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers (BIO-CODES)"
+    presenter: Martin Etzrodt
+    affiliation: ISCC Foundation
+    event: "Euro-BioImaging — Image Data Community Days (online)"
+    date: 2026-04-15
+    date_display: "April 2026"
+    type: Talk
+    file: biocodes-eurobioimaging.pdf
+    license_year: 2026
+
+  - title: "From Content Fingerprint to FAIR Digital Object — The ISCC Protocol as a Content-Based Discovery Layer for the FDO Ecosystem"
+    presenter: Titusz Pan & Martin Etzrodt
+    affiliation: ISCC Foundation
+    event: "FDO Conference 2026 · TU Wien, Vienna"
+    event_url: https://fairdo.org/fdo-conference-2026/
+    date: 2026-03-26
+    date_display: "26 March 2026"
+    type: Talk
+    file: 2026-03-26-biocodes-fdo-conference.pdf
+    license_year: 2026
+
+  - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers (BIO-CODES)"
+    presenter: Sylvia Le Dévédec
+    affiliation: Leiden University
+    event: "2nd OSCARS Annual General Meeting — Flash Talk"
+    date: 2026-03-10
+    date_display: "March 2026"
+    type: Flash Talk
+    file: biocodes-oscars-agm-2-flashtalk.pdf
+    license_year: 2026
+
+  - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers (BIO-CODES)"
+    presenter: Sylvia Le Dévédec
+    affiliation: Leiden University
+    event: "2nd OSCARS Annual General Meeting — Poster"
+    date: 2026-03-09
+    date_display: "March 2026"
+    type: Poster
+    file: biocodes-oscars-agm-2-poster.pdf
+    license_year: 2026
+
+  - title: "BIO-CODES — Funded Projects Flash Talk"
+    presenter: Sylvia Le Dévédec
+    affiliation: Leiden University
+    event: "OSCARS Funded Projects — Flash Talk"
+    date: 2026-03-01
+    date_display: "2026"
+    type: Flash Talk
+    file: biocodes-flashtalk-funded-projects.pdf
+    license_year: 2026
+
+  - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers (BIO-CODES)"
+    presenter: Sylvia Le Dévédec
+    affiliation: Leiden University
+    event: "CytoData 2025 · eu-openscreen"
+    event_url: https://cytodata25.eu-openscreen.eu/
+    date: 2025-11-20
+    date_display: "20–21 November 2025"
+    type: Poster
+    file: biocodes-cytodata-poster.jpg
+    thumb: biocodes-cytodata-poster.jpg
+    license_year: 2025
+
+  - title: "Introduction to the International Standard Content Code (ISCC) — the ISCC Discovery Protocol"
+    presenter: Martin Etzrodt
+    affiliation: ISCC Foundation
+    event: "NL-BioImaging Community"
+    date: 2025-09-30
+    date_display: "30 September 2025"
+    type: Talk
+    file: 2025-09-30-biocodes-nl-bioimaging.pdf
+    license_year: 2025
+
+  - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers (BIO-CODES)"
+    presenter: Sylvia Le Dévédec
+    affiliation: Leiden University
+    event: "Imagine Utrecht"
+    date: 2025-06-18
+    date_display: "18 June 2025"
+    type: Talk
+    file: 2025-06-18-biocodes-imagine-utrecht.pdf
+    license_year: 2025
+
+  - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers (BIO-CODES)"
+    presenter: Sylvia Le Dévédec
+    affiliation: Leiden University
+    event: "ELMI 2025 — European Light Microscopy Initiative"
+    date: 2025-06-10
+    date_display: "2025"
+    type: Poster
+    file: biocodes-elmi-poster.pdf
+    license_year: 2025
+
+  - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers"
+    presenter: Sylvia Le Dévédec
+    affiliation: Leiden University
+    event: "1st OSCARS Annual General Meeting"
+    date: 2025-03-15
+    date_display: "March 2025"
+    type: Poster
+    file: biocodes-oscars-agm-1-ai-readiness.pdf
+    license_year: 2025
+
+  - title: "BIO-CODES — Flash Talk"
+    presenter: Sylvia Le Dévédec
+    affiliation: Leiden University
+    event: "1st OSCARS Annual General Meeting — Flash Talk"
+    date: 2025-03-14
+    date_display: "March 2025"
+    type: Flash Talk
+    file: biocodes-oscars-agm-1-sylvia-flashtalk.pdf
+    license_year: 2025
+
+  - title: "BIO-CODES: Enhancing AI-Readiness of Bioimaging Data — ISCC Introduction"
+    presenter: Titusz Pan
+    affiliation: ISCC Foundation
+    event: "Project Introduction"
+    date: 2024-11-29
+    date_display: "29 November 2024"
+    type: Introduction
+    file: 2024-11-29-biocodes-introduction.pdf
+    license_year: 2024
