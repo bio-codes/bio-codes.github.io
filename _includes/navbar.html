@@ -7,12 +7,25 @@
             <span></span>
         </button>
         <nav class="nav-menu" id="navMenu">
-            <a href="#challenge" class="nav-link">Why</a>
-            <a href="#iscc" class="nav-link">ISCC</a>
-            <a href="#features" class="nav-link">Capabilities</a>
-            <a href="#tools" class="nav-link">Tools</a>
-            <a href="#imagewalk" class="nav-link">IMAGEWALK</a>
-            <a href="#integrations" class="nav-link">Integrations</a>
+            <a href="{{ '/' | relative_url }}#challenge" class="nav-link">Why</a>
+
+            <div class="nav-dropdown">
+                <span class="nav-dropdown-toggle">Technology<span class="nav-caret" aria-hidden="true">▾</span></span>
+                <div class="nav-dropdown-menu">
+                    <a href="{{ '/' | relative_url }}#iscc" class="nav-link nav-dropdown-item">ISCC Standard</a>
+                    <a href="{{ '/' | relative_url }}#features" class="nav-link nav-dropdown-item">Capabilities</a>
+                    <a href="{{ '/' | relative_url }}#imagewalk" class="nav-link nav-dropdown-item">IMAGEWALK</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <span class="nav-dropdown-toggle">Software<span class="nav-caret" aria-hidden="true">▾</span></span>
+                <div class="nav-dropdown-menu">
+                    <a href="{{ '/' | relative_url }}#tools" class="nav-link nav-dropdown-item">Tools</a>
+                    <a href="{{ '/' | relative_url }}#integrations" class="nav-link nav-dropdown-item">Integrations</a>
+                </div>
+            </div>
+
             <div class="nav-dropdown">
                 <span class="nav-dropdown-toggle">Outputs<span class="nav-caret" aria-hidden="true">▾</span></span>
                 <div class="nav-dropdown-menu">
@@ -20,7 +33,8 @@
                     <a href="{{ '/publications/' | relative_url }}" class="nav-link nav-dropdown-item">Publications</a>
                 </div>
             </div>
-            <a href="#team" class="nav-link">Team</a>
+
+            <a href="{{ '/' | relative_url }}#team" class="nav-link">Team</a>
         </nav>
     </div>
 </header>
