@@ -1,0 +1,355 @@
+<section class="section demo" id="demo">
+    <div class="container">
+        <p class="section-eyebrow">{{ site.data.demo.section_eyebrow }}</p>
+        <h2 class="section-title">{{ site.data.demo.section_title }}</h2>
+        <p class="section-sub">{{ site.data.demo.section_sub }}</p>
+
+        <div class="demo-concept">
+            <p class="demo-concept-lead">{{ site.data.demo.intro.lead }}</p>
+            <div class="demo-concept-grid">
+                {% for unit in site.data.demo.intro.units %}
+                <div class="demo-concept-card">
+                    <span class="demo-concept-icon" aria-hidden="true">
+                        {% case unit.icon %} {% when 'similar' %}
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <rect
+                                x="3.5"
+                                y="3.5"
+                                width="13"
+                                height="13"
+                                rx="2.5"
+                            />
+                            <rect
+                                x="7.5"
+                                y="7.5"
+                                width="13"
+                                height="13"
+                                rx="2.5"
+                            />
+                        </svg>
+                        {% when 'identity' %}
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 9.2a8 8 0 0 1 14 0" />
+                            <path
+                                d="M8 11.2a4.5 4.5 0 0 1 8 0c0 3.2-.5 5.8-1.4 8"
+                            />
+                            <path
+                                d="M12 11.6a1.6 1.6 0 0 1 1.6 1.6c0 2.7-.4 5-1.3 7.2"
+                            />
+                            <path d="M8.7 13.4c0 2.8-.4 4.8-1.3 6.6" />
+                        </svg>
+                        {% endcase %}
+                    </span>
+                    <div>
+                        <span class="demo-concept-name"
+                            >{{ unit.name }}
+                            <span class="demo-tag">{{ unit.tag }}</span>
+                        </span>
+                        <p class="demo-concept-desc">{{ unit.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="demo-stage">
+            <label class="demo-drop" id="isccDrop">
+                <span class="demo-drop-icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M12 16V4" />
+                        <path d="m7 9 5-5 5 5" />
+                        <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" />
+                    </svg>
+                </span>
+                <span class="demo-drop-title"
+                    >{{ site.data.demo.dropzone.title }}</span
+                >
+                <span class="demo-drop-sub"
+                    >{{ site.data.demo.dropzone.subtitle }}</span
+                >
+                <input
+                    type="file"
+                    id="isccFile"
+                    aria-label="Choose a file to fingerprint"
+                />
+            </label>
+
+            <div
+                class="demo-status"
+                id="isccStatus"
+                data-state="loading"
+                role="status"
+                aria-live="polite"
+            >
+                <span class="demo-status-dot" aria-hidden="true"></span>
+                <span id="isccStatusText"
+                    >{{ site.data.demo.dropzone.hint_loading }}</span
+                >
+            </div>
+
+            <div class="demo-progress" id="isccProgress">
+                <div id="isccProgressFill"></div>
+            </div>
+
+            <section class="demo-results" id="isccResults" aria-live="polite">
+                <div class="demo-card demo-card-hero">
+                    <div class="demo-card-label">
+                        Composite ISCC-SUM
+                        <span class="demo-tag">128-bit units</span>
+                        <button
+                            type="button"
+                            class="demo-copy"
+                            data-copy="isccCompositeOut"
+                            aria-label="Copy the composite ISCC-SUM"
+                        >
+                            Copy
+                        </button>
+                    </div>
+                    <div class="demo-code demo-code-hero" id="isccCompositeOut">
+                        —
+                    </div>
+                </div>
+
+                <div class="demo-card demo-card-unit">
+                    <div class="demo-card-label">
+                        Data-Code
+                        <span class="demo-tag">similarity</span>
+                        <button
+                            type="button"
+                            class="demo-copy"
+                            data-copy="isccDataOut"
+                            aria-label="Copy the Data-Code"
+                        >
+                            Copy
+                        </button>
+                    </div>
+                    <div class="demo-code" id="isccDataOut">—</div>
+                </div>
+
+                <div class="demo-card demo-card-unit">
+                    <div class="demo-card-label">
+                        Instance-Code
+                        <span class="demo-tag">identity</span>
+                        <button
+                            type="button"
+                            class="demo-copy"
+                            data-copy="isccInstanceOut"
+                            aria-label="Copy the Instance-Code"
+                        >
+                            Copy
+                        </button>
+                    </div>
+                    <div class="demo-code" id="isccInstanceOut">—</div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-label">
+                        BLAKE3 datahash
+                        <span class="demo-tag">multihash 1e20</span>
+                        <button
+                            type="button"
+                            class="demo-copy"
+                            data-copy="isccDatahashOut"
+                            aria-label="Copy the BLAKE3 datahash"
+                        >
+                            Copy
+                        </button>
+                    </div>
+                    <div class="demo-code" id="isccDatahashOut">—</div>
+                </div>
+
+                <div class="demo-meta" id="isccMeta"></div>
+
+                <div class="demo-verify">
+                    <div class="demo-verify-head">
+                        <span class="demo-verify-icon" aria-hidden="true">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <polyline points="4 17 10 11 4 5" />
+                                <line x1="12" y1="19" x2="20" y2="19" />
+                            </svg>
+                        </span>
+                        <div>
+                            <strong class="demo-verify-title"
+                                >{{ site.data.demo.verify.title }}</strong
+                            >
+                            <p class="demo-verify-desc">
+                                {{ site.data.demo.verify.description }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <ol class="demo-verify-steps">
+                        <li class="demo-verify-step">
+                            <div class="demo-verify-step-head">
+                                <span class="demo-verify-num">1</span>
+                                <span class="demo-verify-label"
+                                    >{{ site.data.demo.verify.install_label }}</span
+                                >
+                                <div
+                                    class="demo-verify-tabs"
+                                    role="tablist"
+                                    aria-label="Operating system"
+                                >
+                                    {% for opt in site.data.demo.verify.install %}
+                                    <button
+                                        type="button"
+                                        class="demo-verify-tab{% if forloop.first %} is-active{% endif %}"
+                                        data-os="{{ opt.os }}"
+                                        role="tab"
+                                        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                                    >
+                                        {{ opt.label }}
+                                    </button>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% for opt in site.data.demo.verify.install %}
+                            <div
+                                class="demo-verify-panel{% if forloop.first %} is-active{% endif %}"
+                                data-os="{{ opt.os }}"
+                            >
+                                <code
+                                    class="demo-cmd-code"
+                                    id="isccUv-{{ opt.os }}"
+                                    >{{ opt.command }}</code
+                                >
+                                <button
+                                    type="button"
+                                    class="demo-copy"
+                                    data-copy="isccUv-{{ opt.os }}"
+                                    aria-label="Copy the uv install command for {{ opt.label }}"
+                                >
+                                    Copy
+                                </button>
+                            </div>
+                            {% endfor %}
+                        </li>
+
+                        <li class="demo-verify-step">
+                            <div class="demo-verify-step-head">
+                                <span class="demo-verify-num">2</span>
+                                <span class="demo-verify-label"
+                                    >{{ site.data.demo.verify.run_label }}</span
+                                >
+                            </div>
+                            <div class="demo-verify-panel is-active">
+                                <code class="demo-cmd-code" id="isccVerifyCmd"
+                                    >uvx iscc-sum --units …</code
+                                >
+                                <button
+                                    type="button"
+                                    class="demo-copy"
+                                    data-copy="isccVerifyCmd"
+                                    aria-label="Copy the ISCC-SUM command"
+                                >
+                                    Copy
+                                </button>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+
+        <div class="demo-trust">
+            {% for item in site.data.demo.trust %}
+            <div class="demo-trust-tile">
+                <span class="demo-trust-icon" aria-hidden="true">
+                    {% case item.icon %} {% when 'lock' %}
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <rect x="4" y="11" width="16" height="10" rx="2" />
+                        <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                        <circle
+                            cx="12"
+                            cy="16"
+                            r="1.2"
+                            fill="currentColor"
+                            stroke="none"
+                        />
+                    </svg>
+                    {% when 'gauge' %}
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M4 19a8 8 0 1 1 16 0" />
+                        <path d="m12 14 4-4" />
+                        <circle
+                            cx="12"
+                            cy="14"
+                            r="1.4"
+                            fill="currentColor"
+                            stroke="none"
+                        />
+                    </svg>
+                    {% when 'check' %}
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M12 3 5 6v5c0 4.4 3 8.5 7 9.7 4-1.2 7-5.3 7-9.7V6z"
+                        />
+                        <path d="m9.3 12 1.9 1.9 3.6-3.8" />
+                    </svg>
+                    {% endcase %}
+                </span>
+                <div>
+                    <strong class="demo-trust-title">{{ item.title }}</strong>
+                    <p class="demo-trust-desc">{{ item.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <p class="demo-footnote">{{ site.data.demo.footnote }}</p>
+    </div>
+
+    <script
+        type="module"
+        src="{{ '/assets/js/iscc-demo.js' | relative_url }}"
+    ></script>
+</section>

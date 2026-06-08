@@ -1,0 +1,75 @@
+# _data/demo.yml
+# ─────────────────────────────────────────────────────────────────
+# Copy for the live, in-browser ISCC-SUM demo (the dark "showcase"
+# band directly below the hero). All hashing happens client-side via
+# @iscc/wasm — see _includes/demo.html and assets/js/iscc-demo.js.
+# Edit the copy here without touching markup.
+# ─────────────────────────────────────────────────────────────────
+
+section_eyebrow: "Live · Runs entirely in your browser"
+section_title: "Generate an ISCC-SUM - Client-side in your Browser"
+section_sub: >
+  Drop in any file and watch its 256-bit Data-Code and Instance-Code appear.
+  The bytes never leave this browser tab — hashing runs locally in WebAssembly,
+  so even large microscopy images are fingerprinted entirely client-side, at
+  full speed.
+
+# Primer shown above the dropzone so first-time visitors understand what the
+# two codes mean. Order matches the result cards (Data-Code, then Instance-Code).
+intro:
+  lead: >
+    ISCC-SUM reads your file once and derives two complementary fingerprints,
+    then combines them into a single composite code:
+  units:
+    - name: "Data-Code"
+      tag: "similarity"
+      icon: similar
+      description: >
+        A similarity-preserving fingerprint. Near-identical files produce
+        near-identical codes, so variants and near-duplicates stay close —
+        measurable by simple bit-distance.
+    - name: "Instance-Code"
+      tag: "identity"
+      icon: identity
+      description: >
+        An exact BLAKE3 checksum of the bytes. Change a single bit and it
+        changes completely — proof of integrity and exact duplicates.
+
+dropzone:
+  title: "Drop a file here"
+  subtitle: "or click to choose — nothing is uploaded"
+  hint_loading: "Starting the WebAssembly engine…"
+  hint_ready: "Engine ready — drop a file to compute its ISCC-SUM."
+
+# "Verify locally" box shown under the result cards once a file is hashed.
+# Lets visitors reproduce the in-browser codes natively with uv + iscc-sum.
+# The run command's file name is filled in by assets/js/iscc-demo.js.
+verify:
+  title: "Try and compare with local ISCC-SUM generation"
+  description: >
+    Reproduce this result natively on your own machine. Install uv once, then
+    run ISCC-SUM on the same file — the codes should match bit for bit.
+  install_label: "Install uv"
+  install:
+    - os: unix
+      label: "macOS / Linux"
+      command: "curl -LsSf https://astral.sh/uv/install.sh | sh"
+    - os: windows
+      label: "Windows"
+      command: 'powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"'
+  run_label: "Run ISCC-SUM"
+
+trust:
+  - icon: lock
+    title: "Nothing is uploaded"
+    description: "Your file never leaves this tab. Every byte is hashed locally in your browser."
+  - icon: gauge
+    title: "Built for big data"
+    description: "Single-pass streaming keeps memory bounded — the same engine handles multi-GB images."
+  - icon: check
+    title: "ISO 24138 core"
+    description: "The Rust core of the standard, compiled to WebAssembly. Reproducible anywhere."
+
+footnote: >
+  Powered by @iscc/wasm, the WebAssembly build of iscc-lib (the Rust core of
+  ISO 24138).

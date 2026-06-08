@@ -1439,6 +1439,607 @@ ul {
   text-decoration: underline;
 }
 
+/* ── ISCC-SUM live demo (dark ink showcase) ────────────────────── */
+.demo {
+  position: relative;
+  background: var(--color-ink);
+  color: var(--color-ink-text);
+  overflow: hidden;
+}
+
+.demo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(78% 58% at 50% -8%, rgba(201, 138, 219, 0.13), transparent 60%);
+  pointer-events: none;
+}
+
+.demo .container {
+  position: relative;
+}
+
+.demo .section-eyebrow {
+  color: var(--color-orchid);
+}
+
+.demo .section-title {
+  color: #fff;
+}
+
+.demo .section-sub {
+  margin-bottom: 36px;
+  color: var(--color-ink-text);
+}
+
+/* ── Concept primer (what the two codes mean) ──────────────────── */
+/* Width matches .demo-stage so the primer, dropzone and result cards
+   share the same left/right edges. */
+.demo-concept {
+  max-width: 760px;
+  margin: 0 auto 38px;
+}
+
+.demo-concept-lead {
+  max-width: 680px;
+  margin: 0 auto 20px;
+  text-align: center;
+  font-size: var(--fs-md);
+  line-height: 1.55;
+  color: var(--color-ink-text);
+}
+
+.demo-concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  text-align: left;
+}
+
+.demo-concept-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(201, 138, 219, 0.14);
+}
+
+.demo-concept-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.12);
+  border: 1px solid rgba(201, 138, 219, 0.22);
+}
+
+.demo-concept-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.demo-concept-name {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 5px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: #fff;
+}
+
+.demo-concept-desc {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--color-ink-text);
+}
+
+.demo-stage {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ── Dropzone ──────────────────────────────────────────────────── */
+.demo-drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  padding: 52px 28px;
+  border: 1.5px dashed rgba(201, 138, 219, 0.42);
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 150% at 50% 0%, rgba(201, 138, 219, 0.10), transparent 62%),
+    rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.demo-drop:hover {
+  border-color: rgba(201, 138, 219, 0.8);
+  background:
+    radial-gradient(120% 150% at 50% 0%, rgba(201, 138, 219, 0.17), transparent 62%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.demo-drop:focus-within {
+  outline: none;
+  border-color: var(--color-orchid);
+  box-shadow: 0 0 0 3px rgba(201, 138, 219, 0.28);
+}
+
+.demo-drop.is-dragging {
+  border-style: solid;
+  border-color: var(--color-orchid);
+  background: radial-gradient(120% 150% at 50% 0%, rgba(201, 138, 219, 0.28), rgba(201, 138, 219, 0.05) 70%);
+  box-shadow: 0 0 0 4px rgba(201, 138, 219, 0.18), 0 24px 60px rgba(201, 138, 219, 0.16);
+  transform: translateY(-2px);
+}
+
+.demo-drop-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+  border-radius: 16px;
+  color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.1);
+  border: 1px solid rgba(201, 138, 219, 0.22);
+  transition: transform 0.25s, background 0.2s;
+}
+
+.demo-drop-icon svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.demo-drop:hover .demo-drop-icon,
+.demo-drop.is-dragging .demo-drop-icon {
+  background: rgba(201, 138, 219, 0.2);
+  transform: translateY(-3px);
+}
+
+.demo-drop-title {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: #fff;
+}
+
+.demo-drop-sub {
+  font-size: var(--fs-sm);
+  color: var(--color-ink-muted);
+}
+
+/* Keep the input focusable for keyboard users while visually hidden. */
+.demo-drop input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Status + progress ─────────────────────────────────────────── */
+.demo-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 20px;
+  font-size: var(--fs-sm);
+  color: var(--color-ink-text);
+}
+
+.demo-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-ink-muted);
+  flex-shrink: 0;
+}
+
+.demo-status[data-state="ready"] .demo-status-dot,
+.demo-status[data-state="done"] .demo-status-dot {
+  background: var(--color-green);
+}
+
+.demo-status[data-state="loading"] .demo-status-dot,
+.demo-status[data-state="working"] .demo-status-dot {
+  background: var(--color-orchid);
+  animation: isccPulse 1s ease-in-out infinite;
+}
+
+.demo-status[data-state="error"] {
+  color: #ff9b9b;
+}
+
+.demo-status[data-state="error"] .demo-status-dot {
+  background: #ff6b6b;
+}
+
+@keyframes isccPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.demo-progress {
+  display: none;
+  height: 6px;
+  max-width: 420px;
+  margin: 16px auto 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+
+.demo-progress.is-active {
+  display: block;
+}
+
+.demo-progress > div {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-orchid));
+  transition: width 0.08s linear;
+}
+
+/* ── Result cards ──────────────────────────────────────────────── */
+.demo-results {
+  display: none;
+  margin-top: 26px;
+  text-align: left;
+}
+
+.demo-results.is-visible {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: isccFadeIn 0.3s ease;
+}
+
+@keyframes isccFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.demo-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 138, 219, 0.15);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.demo-card-hero {
+  background: rgba(201, 138, 219, 0.07);
+  border-color: rgba(201, 138, 219, 0.3);
+}
+
+/* The two units the composite is built from — a shared left accent ties
+   them together (Law of Common Region) and back to the hero card above. */
+.demo-card-unit {
+  border-left: 2px solid rgba(201, 138, 219, 0.4);
+}
+
+.demo-card-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 9px;
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-text);
+}
+
+.demo-tag {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 1px 8px;
+  border-radius: 6px;
+  color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.12);
+  border: 1px solid rgba(201, 138, 219, 0.2);
+}
+
+.demo-copy {
+  margin-left: auto;
+  cursor: pointer;
+  font-family: var(--font-stack);
+  font-size: var(--fs-sm);
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-ink-text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 138, 219, 0.2);
+  border-radius: 6px;
+  padding: 3px 11px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.demo-copy:hover {
+  color: #fff;
+  border-color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.14);
+}
+
+.demo-copy.is-copied {
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.demo-code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  word-break: break-all;
+  color: #fff;
+}
+
+.demo-code-hero {
+  font-size: var(--fs-md);
+  line-height: 1.5;
+}
+
+.demo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 22px;
+  margin-top: 18px;
+  font-size: var(--fs-sm);
+  color: var(--color-ink-text);
+}
+
+.demo-meta-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.demo-meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-muted);
+}
+
+.demo-meta-item b {
+  color: #fff;
+  font-weight: 600;
+}
+
+.demo-meta-item.is-highlight b {
+  color: var(--color-orchid);
+}
+
+.demo-meta-check {
+  margin-left: auto;
+  color: var(--color-green);
+}
+
+.demo-meta-check.is-bad {
+  color: #ff9b9b;
+}
+
+/* ── Verify locally ────────────────────────────────────────────── */
+/* Sits at the foot of the result cards (shown only with a result, so the
+   run command always has a real file name). A divider sets it apart. */
+.demo-verify {
+  padding-top: 22px;
+  border-top: 1px solid rgba(201, 138, 219, 0.15);
+}
+
+.demo-verify-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.demo-verify-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.12);
+  border: 1px solid rgba(201, 138, 219, 0.22);
+}
+
+.demo-verify-icon svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.demo-verify-title {
+  display: block;
+  margin-bottom: 3px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: #fff;
+}
+
+.demo-verify-desc {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--color-ink-text);
+}
+
+.demo-verify-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo-verify-step-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 9px;
+}
+
+.demo-verify-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.12);
+  border: 1px solid rgba(201, 138, 219, 0.3);
+}
+
+.demo-verify-label {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-text);
+}
+
+.demo-verify-tabs {
+  display: inline-flex;
+  margin-left: auto;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 138, 219, 0.15);
+}
+
+.demo-verify-tab {
+  cursor: pointer;
+  font-family: var(--font-stack);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-muted);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 3px 11px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.demo-verify-tab:hover {
+  color: #fff;
+}
+
+.demo-verify-tab.is-active {
+  color: #fff;
+  background: rgba(201, 138, 219, 0.18);
+}
+
+.demo-verify-panel {
+  display: none;
+}
+
+.demo-verify-panel.is-active {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.demo-cmd-code {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(201, 138, 219, 0.15);
+  border-radius: 8px;
+  padding: 10px 13px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ── Trust tiles ───────────────────────────────────────────────── */
+.demo-trust {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 920px;
+  margin: 44px auto 0;
+}
+
+.demo-trust-tile {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 22px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 138, 219, 0.14);
+}
+
+.demo-trust-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.12);
+  border: 1px solid rgba(201, 138, 219, 0.22);
+}
+
+.demo-trust-icon svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+.demo-trust-title {
+  display: block;
+  margin-bottom: 3px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: #fff;
+}
+
+.demo-trust-desc {
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--color-ink-text);
+}
+
+.demo-footnote {
+  max-width: 760px;
+  margin: 30px auto 0;
+  text-align: center;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--color-ink-muted);
+}
+
 /* ── Responsive ────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   :root {
@@ -1548,6 +2149,19 @@ ul {
     grid-template-columns: 1fr;
   }
 
+  .demo-concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-trust {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .demo-drop {
+    padding: 40px 20px;
+  }
+
   .pres-grid {
     grid-template-columns: 1fr;
   }
@@ -1603,5 +2217,17 @@ ul {
   .hero-meta {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Stack the command and its copy button so neither gets cramped. */
+  .demo-verify-panel.is-active {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .demo-verify-panel .demo-copy {
+    margin-left: 0;
+    align-self: flex-end;
   }
 }
