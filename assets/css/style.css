@@ -1468,6 +1468,77 @@ ul {
 }
 
 .demo .section-sub {
+  margin-bottom: 36px;
+  color: var(--color-ink-text);
+}
+
+/* ── Concept primer (what the two codes mean) ──────────────────── */
+/* Width matches .demo-stage so the primer, dropzone and result cards
+   share the same left/right edges. */
+.demo-concept {
+  max-width: 760px;
+  margin: 0 auto 38px;
+}
+
+.demo-concept-lead {
+  max-width: 680px;
+  margin: 0 auto 20px;
+  text-align: center;
+  font-size: var(--fs-md);
+  line-height: 1.55;
+  color: var(--color-ink-text);
+}
+
+.demo-concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  text-align: left;
+}
+
+.demo-concept-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(201, 138, 219, 0.14);
+}
+
+.demo-concept-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.12);
+  border: 1px solid rgba(201, 138, 219, 0.22);
+}
+
+.demo-concept-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.demo-concept-name {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 5px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: #fff;
+}
+
+.demo-concept-desc {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
   color: var(--color-ink-text);
 }
 
@@ -1633,7 +1704,9 @@ ul {
 }
 
 .demo-results.is-visible {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   animation: isccFadeIn 0.3s ease;
 }
 
@@ -1647,16 +1720,17 @@ ul {
   border: 1px solid rgba(201, 138, 219, 0.15);
   border-radius: 12px;
   padding: 16px 18px;
-  margin-top: 14px;
-}
-
-.demo-card:first-child {
-  margin-top: 0;
 }
 
 .demo-card-hero {
   background: rgba(201, 138, 219, 0.07);
   border-color: rgba(201, 138, 219, 0.3);
+}
+
+/* The two units the composite is built from — a shared left accent ties
+   them together (Law of Common Region) and back to the hero card above. */
+.demo-card-unit {
+  border-left: 2px solid rgba(201, 138, 219, 0.4);
 }
 
 .demo-card-label {
@@ -1719,12 +1793,6 @@ ul {
 .demo-code-hero {
   font-size: var(--fs-md);
   line-height: 1.5;
-}
-
-.demo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
 }
 
 .demo-meta {
@@ -1937,7 +2005,7 @@ ul {
     grid-template-columns: 1fr;
   }
 
-  .demo-grid {
+  .demo-concept-grid {
     grid-template-columns: 1fr;
   }
 

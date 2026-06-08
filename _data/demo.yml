@@ -14,6 +14,27 @@ section_sub: >
   so even large microscopy images are fingerprinted entirely client-side, at
   full speed.
 
+# Primer shown above the dropzone so first-time visitors understand what the
+# two codes mean. Order matches the result cards (Data-Code, then Instance-Code).
+intro:
+  lead: >
+    ISCC-SUM reads your file once and derives two complementary fingerprints,
+    then combines them into a single composite code:
+  units:
+    - name: "Data-Code"
+      tag: "similarity"
+      icon: similar
+      description: >
+        A similarity-preserving fingerprint. Near-identical files produce
+        near-identical codes, so variants and near-duplicates stay close —
+        measurable by simple bit-distance.
+    - name: "Instance-Code"
+      tag: "identity"
+      icon: identity
+      description: >
+        An exact BLAKE3 checksum of the bytes. Change a single bit and it
+        changes completely — proof of integrity and exact duplicates.
+
 dropzone:
   title: "Drop a file here"
   subtitle: "or click to choose — nothing is uploaded"
