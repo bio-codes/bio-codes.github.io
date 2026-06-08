@@ -46,6 +46,10 @@ function datahashFromInstanceCode(instanceCode) {
 const escapeHtml = (s) =>
   s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+/** Double-quote a file name for the verify command (handles spaces; drops any
+ *  embedded double quote, which a real file name effectively never contains). */
+const shellQuote = (name) => `"${name.replace(/"/g, "")}"`;
+
 /** Format a byte count as a human-readable string. */
 function fmtBytes(n) {
   const u = ["B", "KB", "MB", "GB"];
@@ -172,6 +176,7 @@ function initDemo() {
     $("isccDataOut").textContent = streamed.dataCode;
     $("isccInstanceOut").textContent = streamed.instanceCode;
     $("isccDatahashOut").textContent = sum.datahash;
+    $("isccVerifyCmd").textContent = `uvx iscc-sum --units ${shellQuote(file.name)}`;
 
     const mbps = elapsed > 0 ? (size / 1048576 / elapsed).toFixed(1) : "∞";
 
@@ -219,6 +224,25 @@ function initDemo() {
         });
       }
     }));
+
+  // Verify-locally OS tabs: switch which uv-install command is shown. Only the
+  // install panels carry data-os; the run command below them is shared.
+  const osTabs = document.querySelectorAll(".demo-verify-tab");
+  const osPanels = document.querySelectorAll(".demo-verify-panel[data-os]");
+  function selectOs(os) {
+    osTabs.forEach((t) => {
+      const on = t.dataset.os === os;
+      t.classList.toggle("is-active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    osPanels.forEach((p) => p.classList.toggle("is-active", p.dataset.os === os));
+  }
+  osTabs.forEach((t) => t.addEventListener("click", () => selectOs(t.dataset.os)));
+  if (osTabs.length) {
+    // Default to the visitor's own platform so the right command is up front.
+    const isWin = /win/i.test(navigator.userAgent || navigator.platform || "");
+    selectOs(isWin ? "windows" : "unix");
+  }
 
   // Preload the engine when the demo nears the viewport, and on first intent,
   // so the first drop is instant without blocking initial page render.

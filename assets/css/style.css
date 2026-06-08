@@ -1835,6 +1835,150 @@ ul {
   color: #ff9b9b;
 }
 
+/* ── Verify locally ────────────────────────────────────────────── */
+/* Sits at the foot of the result cards (shown only with a result, so the
+   run command always has a real file name). A divider sets it apart. */
+.demo-verify {
+  padding-top: 22px;
+  border-top: 1px solid rgba(201, 138, 219, 0.15);
+}
+
+.demo-verify-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.demo-verify-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.12);
+  border: 1px solid rgba(201, 138, 219, 0.22);
+}
+
+.demo-verify-icon svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.demo-verify-title {
+  display: block;
+  margin-bottom: 3px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: #fff;
+}
+
+.demo-verify-desc {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--color-ink-text);
+}
+
+.demo-verify-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo-verify-step-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 9px;
+}
+
+.demo-verify-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-orchid);
+  background: rgba(201, 138, 219, 0.12);
+  border: 1px solid rgba(201, 138, 219, 0.3);
+}
+
+.demo-verify-label {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-text);
+}
+
+.demo-verify-tabs {
+  display: inline-flex;
+  margin-left: auto;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 138, 219, 0.15);
+}
+
+.demo-verify-tab {
+  cursor: pointer;
+  font-family: var(--font-stack);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-muted);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 3px 11px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.demo-verify-tab:hover {
+  color: #fff;
+}
+
+.demo-verify-tab.is-active {
+  color: #fff;
+  background: rgba(201, 138, 219, 0.18);
+}
+
+.demo-verify-panel {
+  display: none;
+}
+
+.demo-verify-panel.is-active {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.demo-cmd-code {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(201, 138, 219, 0.15);
+  border-radius: 8px;
+  padding: 10px 13px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 /* ── Trust tiles ───────────────────────────────────────────────── */
 .demo-trust {
   display: grid;
@@ -2073,5 +2217,17 @@ ul {
   .hero-meta {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Stack the command and its copy button so neither gets cramped. */
+  .demo-verify-panel.is-active {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .demo-verify-panel .demo-copy {
+    margin-left: 0;
+    align-self: flex-end;
   }
 }

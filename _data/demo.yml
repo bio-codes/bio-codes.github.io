@@ -41,6 +41,24 @@ dropzone:
   hint_loading: "Starting the WebAssembly engine…"
   hint_ready: "Engine ready — drop a file to compute its ISCC-SUM."
 
+# "Verify locally" box shown under the result cards once a file is hashed.
+# Lets visitors reproduce the in-browser codes natively with uv + iscc-sum.
+# The run command's file name is filled in by assets/js/iscc-demo.js.
+verify:
+  title: "Try and compare with local ISCC-SUM generation"
+  description: >
+    Reproduce this result natively on your own machine. Install uv once, then
+    run ISCC-SUM on the same file — the codes should match bit for bit.
+  install_label: "Install uv"
+  install:
+    - os: unix
+      label: "macOS / Linux"
+      command: "curl -LsSf https://astral.sh/uv/install.sh | sh"
+    - os: windows
+      label: "Windows"
+      command: 'powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"'
+  run_label: "Run ISCC-SUM"
+
 trust:
   - icon: lock
     title: "Nothing is uploaded"
