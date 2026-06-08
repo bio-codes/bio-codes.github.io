@@ -1,0 +1,102 @@
+<section class="section demo" id="demo">
+    <div class="container">
+        <p class="section-eyebrow">{{ site.data.demo.section_eyebrow }}</p>
+        <h2 class="section-title">{{ site.data.demo.section_title }}</h2>
+        <p class="section-sub">{{ site.data.demo.section_sub }}</p>
+
+        <div class="demo-stage">
+            <label class="demo-drop" id="isccDrop">
+                <span class="demo-drop-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 16V4"/>
+                        <path d="m7 9 5-5 5 5"/>
+                        <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/>
+                    </svg>
+                </span>
+                <span class="demo-drop-title">{{ site.data.demo.dropzone.title }}</span>
+                <span class="demo-drop-sub">{{ site.data.demo.dropzone.subtitle }}</span>
+                <input type="file" id="isccFile" aria-label="Choose a file to fingerprint" />
+            </label>
+
+            <div class="demo-status" id="isccStatus" data-state="loading" role="status" aria-live="polite">
+                <span class="demo-status-dot" aria-hidden="true"></span>
+                <span id="isccStatusText">{{ site.data.demo.dropzone.hint_loading }}</span>
+            </div>
+
+            <div class="demo-progress" id="isccProgress"><div id="isccProgressFill"></div></div>
+
+            <section class="demo-results" id="isccResults" aria-live="polite">
+                <div class="demo-card demo-card-hero">
+                    <div class="demo-card-label">Composite ISCC-SUM
+                        <span class="demo-tag">256-bit units</span>
+                        <button type="button" class="demo-copy" data-copy="isccCompositeOut">Copy</button>
+                    </div>
+                    <div class="demo-code demo-code-hero" id="isccCompositeOut">—</div>
+                </div>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <div class="demo-card-label">Data-Code
+                            <span class="demo-tag">similarity</span>
+                            <button type="button" class="demo-copy" data-copy="isccDataOut">Copy</button>
+                        </div>
+                        <div class="demo-code" id="isccDataOut">—</div>
+                    </div>
+                    <div class="demo-card">
+                        <div class="demo-card-label">Instance-Code
+                            <span class="demo-tag">identity</span>
+                            <button type="button" class="demo-copy" data-copy="isccInstanceOut">Copy</button>
+                        </div>
+                        <div class="demo-code" id="isccInstanceOut">—</div>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-label">BLAKE3 datahash
+                        <span class="demo-tag">multihash 1e20</span>
+                        <button type="button" class="demo-copy" data-copy="isccDatahashOut">Copy</button>
+                    </div>
+                    <div class="demo-code" id="isccDatahashOut">—</div>
+                </div>
+
+                <div class="demo-meta" id="isccMeta"></div>
+            </section>
+        </div>
+
+        <div class="demo-trust">
+            {% for item in site.data.demo.trust %}
+            <div class="demo-trust-tile">
+                <span class="demo-trust-icon" aria-hidden="true">
+                    {% case item.icon %}
+                    {% when 'lock' %}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="11" width="16" height="10" rx="2"/>
+                        <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+                        <circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none"/>
+                    </svg>
+                    {% when 'gauge' %}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19a8 8 0 1 1 16 0"/>
+                        <path d="m12 14 4-4"/>
+                        <circle cx="12" cy="14" r="1.4" fill="currentColor" stroke="none"/>
+                    </svg>
+                    {% when 'check' %}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3 5 6v5c0 4.4 3 8.5 7 9.7 4-1.2 7-5.3 7-9.7V6z"/>
+                        <path d="m9.3 12 1.9 1.9 3.6-3.8"/>
+                    </svg>
+                    {% endcase %}
+                </span>
+                <div>
+                    <strong class="demo-trust-title">{{ item.title }}</strong>
+                    <p class="demo-trust-desc">{{ item.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <p class="demo-footnote">{{ site.data.demo.footnote }}</p>
+    </div>
+
+    <script type="module" src="{{ '/assets/js/iscc-demo.js' | relative_url }}"></script>
+</section>
