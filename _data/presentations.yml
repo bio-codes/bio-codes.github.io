@@ -89,6 +89,17 @@ presentations:
     thumb: biocodes-cytodata-poster.jpg
     license_year: 2025
 
+  - title: "International Standard Content Code (ISCC) — ISO 24138:2024"
+    presenter: Titusz Pan
+    affiliation: ISCC Foundation
+    event: "European Galaxy Days (EGD)"
+    event_url: https://galaxyproject.org/events/2025-10-01-egd2025/
+    date: 2025-10-01
+    date_display: "1–3 October 2025"
+    type: Presentation
+    file: 2025-10-01-iscc-european-galaxy-days.pdf
+    license_year: 2025
+
   - title: "Introduction to the International Standard Content Code (ISCC) — the ISCC Discovery Protocol"
     presenter: Martin Etzrodt
     affiliation: ISCC Foundation
@@ -102,21 +113,21 @@ presentations:
   - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers (BIO-CODES)"
     presenter: Sylvia Le Dévédec
     affiliation: Leiden University
-    event: "Imagine Utrecht"
-    date: 2025-06-18
-    date_display: "18 June 2025"
-    type: Talk
-    file: 2025-06-18-biocodes-imagine-utrecht.pdf
-    license_year: 2025
-
-  - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers (BIO-CODES)"
-    presenter: Sylvia Le Dévédec
-    affiliation: Leiden University
     event: "ELMI 2025 — European Light Microscopy Initiative"
     date: 2025-06-10
     date_display: "2025"
     type: Poster
     file: biocodes-elmi-poster.pdf
+    license_year: 2025
+
+  - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers (BIO-CODES)"
+    presenter: Sylvia Le Dévédec
+    affiliation: Leiden University
+    event: "Imagine Utrecht"
+    date: 2025-06-18
+    date_display: "18 June 2025"
+    type: Talk
+    file: 2025-06-18-biocodes-imagine-utrecht.pdf
     license_year: 2025
 
   - title: "Enhancing AI-Readiness of Bioimaging Data with Content-Based Identifiers"
