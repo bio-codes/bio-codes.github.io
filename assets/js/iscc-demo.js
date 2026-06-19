@@ -6,41 +6,22 @@
  * (the WebAssembly build of iscc-lib, the Rust core of ISO 24138). The file
  * never leaves the browser tab — there is no upload.
  *
- * The file is read exactly once: a streamed reader feeds each chunk to both
- * hashers in a single pass while the next chunk prefetches from disk, so memory
- * stays bounded for multi-GB files. The composite is assembled from the two
- * unit strings (gen_iscc_code_v0) and the BLAKE3 datahash is decoded from the
- * 256-bit Instance-Code — no second pass over the bytes. The engine's
- * conformance self-test runs once at load.
+ * The file is read exactly once: a streamed reader feeds each chunk to a single
+ * SumHasher while the next chunk prefetches from disk, so memory stays bounded
+ * for multi-GB files. The SumHasher runs the Data-Code (CDC/MinHash) and
+ * Instance-Code (BLAKE3) algorithms in one pass and, on finalize, returns the
+ * composite ISCC-SUM, both unit strings, the BLAKE3 datahash, and the byte
+ * count together — no second pass over the bytes. The engine's conformance
+ * self-test runs once at load.
  */
 
 import init, {
-  DataHasher,
-  InstanceHasher,
-  gen_iscc_code_v0,
-  iscc_decode,
+  SumHasher,
   conformance_selftest,
-} from "https://cdn.jsdelivr.net/npm/@iscc/wasm@0.4.0/iscc_wasm.js";
+} from "https://cdn.jsdelivr.net/npm/@iscc/wasm@0.5.0/iscc_wasm.js";
 
 /** Get an element by id within the demo. */
 const $ = (id) => document.getElementById(id);
-
-/** Lowercase hex string for a byte array. */
-const toHex = (bytes) =>
-  Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("");
-
-/**
- * The BLAKE3 multihash (1e20-prefixed) of the bytes, decoded from the 256-bit
- * Instance-Code — its body is the full BLAKE3-256 digest, so no extra hashing.
- */
-function datahashFromInstanceCode(instanceCode) {
-  const decoded = iscc_decode(instanceCode);
-  try {
-    return "1e20" + toHex(decoded.digest);
-  } finally {
-    decoded.free();
-  }
-}
 
 /** Escape user-supplied text (a file name) before interpolating into HTML. */
 const escapeHtml = (s) =>
@@ -96,13 +77,12 @@ function initDemo() {
   }
 
   /**
-   * Stream the file once, feeding each chunk to both hashers while the next
-   * chunk prefetches from disk. Reports progress and returns the two 256-bit
-   * ISCC strings plus the byte count read.
+   * Stream the file once, feeding each chunk to a single SumHasher while the
+   * next chunk prefetches from disk. Reports progress and returns the composite
+   * result: { iscc, datahash, filesize, units: [dataCode, instanceCode] }.
    */
-  async function streamThroughHashers(file) {
-    const dataHasher = new DataHasher();
-    const instanceHasher = new InstanceHasher();
+  async function streamThroughHasher(file) {
+    const hasher = new SumHasher();
     const reader = file.stream().getReader();
     const total = file.size;
     let read = 0, lastTick = 0;
@@ -112,8 +92,7 @@ function initDemo() {
         const { done, value } = await pending;
         if (done) break;
         pending = reader.read(); // prefetch the next chunk during hashing
-        dataHasher.update(value);
-        instanceHasher.update(value);
+        hasher.update(value);
         read += value.length;
         // Repaint the bar and yield ~20×/sec — not on every chunk, or frequent
         // small chunks would stall hashing one animation frame at a time.
@@ -130,11 +109,9 @@ function initDemo() {
       reader.releaseLock();
     }
     progressFill.style.width = "100%";
-    return {
-      dataCode: dataHasher.finalize(256),
-      instanceCode: instanceHasher.finalize(256),
-      size: read,
-    };
+    // 256-bit units, 128-bit-unit (wide) composite, include the unit strings —
+    // all from the one pass, no re-read of the bytes.
+    return hasher.finalize(256, true, true);
   }
 
   /** Hash one file and render its codes. Ignores drops while already hashing. */
@@ -151,16 +128,11 @@ function initDemo() {
     try {
       const t0 = performance.now();
 
-      // One streaming pass → the two 256-bit codes; assemble the rest from
-      // those unit strings without re-reading the file.
-      const streamed = await streamThroughHashers(file);
-      const sum = {
-        iscc: gen_iscc_code_v0([streamed.dataCode, streamed.instanceCode], true),
-        datahash: datahashFromInstanceCode(streamed.instanceCode),
-      };
+      // One streaming pass → composite, both unit codes, and the datahash.
+      const sum = await streamThroughHasher(file);
       const elapsed = (performance.now() - t0) / 1000;
 
-      render(file, streamed.size, streamed, sum, elapsed);
+      render(file, sum, elapsed);
       setState("done", `Done — ${file.name}`);
     } catch (e) {
       setState("error", "Error: " + e.message);
@@ -171,10 +143,12 @@ function initDemo() {
   }
 
   /** Paint the result cards and the size / time / throughput meta row. */
-  function render(file, size, streamed, sum, elapsed) {
+  function render(file, sum, elapsed) {
+    const [dataCode, instanceCode] = sum.units;
+    const size = sum.filesize;
     $("isccCompositeOut").textContent = sum.iscc;
-    $("isccDataOut").textContent = streamed.dataCode;
-    $("isccInstanceOut").textContent = streamed.instanceCode;
+    $("isccDataOut").textContent = dataCode;
+    $("isccInstanceOut").textContent = instanceCode;
     $("isccDatahashOut").textContent = sum.datahash;
     $("isccVerifyCmd").textContent = `uvx iscc-sum --units ${shellQuote(file.name)}`;
 
